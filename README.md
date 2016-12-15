@@ -16,8 +16,8 @@ Add TOC to the side of the side of the suspension navigation. Optional: sort and
 
 # Sample
  https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html
- ![image](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/doc/images/gitbook-plugin-anchor-navigation-ex-demo.jpg)
- ![image](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/doc/images/gitbook-plugin-anchor-navigation-ex-demo2.jpg)
+ ![image](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/tree/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo.jpg)
+ ![image](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/tree/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo2.jpg)
  
  
 # Config `book.json`
