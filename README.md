@@ -3,16 +3,16 @@ Add TOC to the side of the side of the suspension navigation. Optional: sort and
  * 1. based on  https://github.com/zhangzq/gitbook-plugin-navigator
  * 2. based on https://github.com/yaneryou/gitbook-plugin-anchor-navigation
  * 3. bug Restore 2 invalid does not display the bug
- * 4. The plug-in dependency Plug in,https://plugins.gitbook.com/plugin/anchors so the anchors plug-in must be before the plug-in
+ * 4. The plug-in dependency Plug in,https://plugins.gitbook.com/plugin/anchors  @Latest: 0.7.1+ so the anchors plug-in must be before the plug-in
 
 
 # cn
 添加toc到侧边悬浮导航。可选：排序并重写页面标题.
-本插件修改源插件的功能：综合修复了原有的bug和兼容性
+本插件修改源插件的功能：综合修复了原有的bug和兼容性,本插件没有业务逻辑，在编译时被调用
  * 1. 基于 https://github.com/zhangzq/gitbook-plugin-navigator
  * 2. 基于 https://github.com/yaneryou/gitbook-plugin-anchor-navigation
  * 3. 修复 bug ：gitbook-plugin-anchor-navigation 不正常显示
- * 4. 该插件依赖 https://plugins.gitbook.com/plugin/anchors 插件，所以 anchors 插件的必须在本插件之前被安装到book.json中
+ * 4. 该插件依赖 https://plugins.gitbook.com/plugin/anchors @Latest: 0.7.1+ 插件，所以 anchors 插件的必须在本插件之前被安装到book.json中
 
 # Sample
  
