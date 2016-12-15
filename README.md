@@ -26,10 +26,13 @@ Add TOC to the side of the side of the suspension navigation. Optional: sort and
 ```json
  "plugins": [
 	   "anchors",
-       "anchor-navigation-ex"],
- "anchor-navigation-ex":{
-		"isRewritePageTitle":true
-	}	   
+       "anchor-navigation-ex"
+  ],
+ "pluginsConfig": {	   
+		"anchor-navigation-ex":{
+			"isRewritePageTitle":true
+		}	   
+  }	
 ```
 isRewritePageTitle :
 * en : Do you want to overwrite the page title, true: will overwrite the anchors plug-in anchor effect
