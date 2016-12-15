@@ -15,6 +15,9 @@ Add TOC to the side of the side of the suspension navigation. Optional: sort and
  * 4. 该插件依赖 https://plugins.gitbook.com/plugin/anchors @Latest: 0.7.1+ 插件，所以 anchors 插件的必须在本插件之前被安装到book.json中
 
 # Sample
+ https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html
+ ![image](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/doc/images/gitbook-plugin-anchor-navigation-ex-demo.jpg)
+ ![image](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/doc/images/gitbook-plugin-anchor-navigation-ex-demo2.jpg)
  
  
 # Config `book.json`
