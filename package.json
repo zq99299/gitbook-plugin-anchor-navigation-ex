@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhangzq/gitbook-plugin-navigator.git"
+    "url": "git+https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex.git"
   },
   "keywords": [
     "gitbook",
