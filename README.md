@@ -35,3 +35,5 @@ isRewritePageTitle :
 ```
 $ npm install gitbook-plugin-anchor-navigation-ex --save
 ```
+
+>open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
