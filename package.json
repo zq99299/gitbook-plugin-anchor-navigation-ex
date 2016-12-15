@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "1.2.3",
-  "description": "Add TOC to the side of the side of the suspension navigation. Optional: sort and rewrite the page title",
+  "version": "0.0.6",
+  "description": "Add TOC to the side of the side of the suspension navigation. Optional: Rewrite the page title and add the number",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,6 +27,15 @@
     "cheerio": "*"
   },
   "engines": {
-    "gitbook": "*"
-  }
+    "gitbook": ">3.x.x"
+  },
+  "gitbook": {
+        "properties": {
+            "isRewritePageTitle": {
+                "type": "boolean",
+                "default": true,
+                "title": "Do you want to overwrite the page title, true: will overwrite the anchors plug-in anchor effect"
+            }
+        }
+    }
 }
