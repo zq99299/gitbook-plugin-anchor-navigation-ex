@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 本插件修改源插件的功能：综合修复了原有的bug和兼容性
  * 1. 基于 https://github.com/zhangzq/gitbook-plugin-navigator
  * 2. 基于 https://github.com/yaneryou/gitbook-plugin-anchor-navigation
@@ -112,7 +112,7 @@ module.exports = {
                         if (toc[i].children[j].children.length > 0) {
                             html += "<ul>";
                             for (var k = 0; k < toc[i].children[j].children.length; k++) {
-                                html += "<li><a href='#" + toc[i].children[j].children[k].url + "'>" + (i + 1 + "." + (j + 1) + ". " + toc[i].children[j].children[k].name) + "</a></li>";
+                               html += "<li><a href='#" + toc[i].children[j].children[k].url + "'>" + (i + 1 + "." + (j + 1) + "." +  (k+1) + ". " + toc[i].children[j].children[k].name) + "</a></li>";
                             }
                             html += "</ul>";
                         }

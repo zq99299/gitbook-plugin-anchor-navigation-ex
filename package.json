@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Add TOC to the side of the side of the suspension navigation. Optional: Rewrite the page title and add the number",
   "main": "index.js",
   "scripts": {
