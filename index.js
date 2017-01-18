@@ -29,7 +29,7 @@ module.exports = {
             const defaultOption = {
                 //Do you want to overwrite the page title, true: will overwrite the anchors plug-in anchor effect
                 //是否重写页面标题，true:将会覆盖anchors插件锚点效果
-                isRewritePageTitle:true
+                isRewritePageTitle: true
             }
             /**
              * [configOption: config option]
@@ -63,33 +63,37 @@ module.exports = {
                                 url: id,
                                 children: []
                             });
-                            if(isRewritePageTitle){
+                            if (isRewritePageTitle) {
                                 h1 += 1;
                                 h2 = 0, h3 = 0;
                                 header.text(h1 + ". " + header.text());
                             }
                             break;
                         case "h2":
-                            toc[toc.length - 1].children.push({
-                                name: header.text(),
-                                url: id,
-                                children: []
-                            });
-                            if(isRewritePageTitle) {
-                                h2 += 1;
-                                h3 = 0;
-                                header.text(h1 + "." + h2 + ". " + header.text());
+                            if (toc.length > 0 && toc[toc.length - 1]["childre"]) {
+                                toc[toc.length - 1].children.push({
+                                    name: header.text(),
+                                    url: id,
+                                    children: []
+                                });
+                                if (isRewritePageTitle) {
+                                    h2 += 1;
+                                    h3 = 0;
+                                    header.text(h1 + "." + h2 + ". " + header.text());
+                                }
                             }
                             break;
                         case "h3":
-                            toc[toc.length - 1].children[toc[toc.length - 1].children.length - 1].children.push({
-                                name: header.text(),
-                                url: id,
-                                children: []
-                            });
-                            if(isRewritePageTitle) {
-                                h3 += 1;
-                                header.text(h1 + "." + h2 + "." + h3 + ". " + header.text());
+                            if (toc.length > 0 && toc[toc.length - 1]["childre"] && toc[toc.length - 1].children[toc[toc.length - 1]["children"]]) {
+                                toc[toc.length - 1].children[toc[toc.length - 1].children.length - 1].children.push({
+                                    name: header.text(),
+                                    url: id,
+                                    children: []
+                                });
+                                if (isRewritePageTitle) {
+                                    h3 += 1;
+                                    header.text(h1 + "." + h2 + "." + h3 + ". " + header.text());
+                                }
                             }
                             break;
                         default:
@@ -112,7 +116,7 @@ module.exports = {
                         if (toc[i].children[j].children.length > 0) {
                             html += "<ul>";
                             for (var k = 0; k < toc[i].children[j].children.length; k++) {
-                               html += "<li><a href='#" + toc[i].children[j].children[k].url + "'>" + (i + 1 + "." + (j + 1) + "." +  (k+1) + ". " + toc[i].children[j].children[k].name) + "</a></li>";
+                                html += "<li><a href='#" + toc[i].children[j].children[k].url + "'>" + (i + 1 + "." + (j + 1) + "." + (k + 1) + ". " + toc[i].children[j].children[k].name) + "</a></li>";
                             }
                             html += "</ul>";
                         }
