@@ -96,3 +96,7 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 #### 2017-01-18
 * en : Page without h[1-3] tag generation failed
 * cn : 页面没有h[1-3] 标签生成失败
+
+#### 2017-01-22
+* en : 2017-01-18 fix bug
+* cn : 2017-01-18 提交的有问题。重新修复

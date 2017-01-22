@@ -70,7 +70,7 @@ module.exports = {
                             }
                             break;
                         case "h2":
-                            if (toc.length > 0 && toc[toc.length - 1]["childre"]) {
+                            if (toc.length > 0 && toc[toc.length - 1]["children"]) {
                                 toc[toc.length - 1].children.push({
                                     name: header.text(),
                                     url: id,
@@ -84,7 +84,7 @@ module.exports = {
                             }
                             break;
                         case "h3":
-                            if (toc.length > 0 && toc[toc.length - 1]["childre"] && toc[toc.length - 1].children[toc[toc.length - 1]["children"]]) {
+                            if (toc.length > 0 && toc[toc.length - 1]["children"] && toc[toc.length - 1].children[toc[toc.length - 1]["children"]]) {
                                 toc[toc.length - 1].children[toc[toc.length - 1].children.length - 1].children.push({
                                     name: header.text(),
                                     url: id,
