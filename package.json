@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "0.0.10",
-  "description": "Add TOC to the side of the side of the suspension navigation. Optional: Rewrite the page title and add the number",
+  "version": "0.1.0",
+  "description": "Add TOC to the side of the suspended navigation, can automatically extract the default page title sort, add anchor point effect to all the title page",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

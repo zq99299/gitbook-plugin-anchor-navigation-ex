@@ -1,42 +1,31 @@
 Math integration with GitBook
 ==============
+### 本插件的功能：
+1. 添加toc到侧边悬浮导航
+2. 可自动提取页面标题排序
+3. 默认给页面所有标题添加 锚点效果
+### 注意事项：
+1. 本插件只会提取 h[1-3] 标签作为悬浮导航
+2. 只有按照以下顺序嵌套才会被提取
+```
+# h1
+## h2
+### h3
 
-### en
-Add TOC to the side of the side of the suspension navigation. Optional: sort and rewrite the page title
- * 1. based on  https://github.com/zhangzq/gitbook-plugin-navigator
- * 2. based on https://github.com/yaneryou/gitbook-plugin-anchor-navigation
- * 3. bug Restore 2 invalid does not display the bug
- * 4. The plug-in dependency Plug in,https://plugins.gitbook.com/plugin/anchors  @Latest: 0.7.1+ so the anchors plug-in must be before the plug-in
- * 5. If you don't have a h[1-3] tag on the page, you will not generate and replace any headers
+# h1
+## h2
+### h3
 
-### cn
-添加toc到侧边悬浮导航。可选：排序并重写页面标题.
-本插件修改源插件的功能：综合修复了原有的bug和兼容性,本插件没有业务逻辑，在编译时被调用
- * 1. 基于 https://github.com/zhangzq/gitbook-plugin-navigator
- * 2. 基于 https://github.com/yaneryou/gitbook-plugin-anchor-navigation
- * 3. 修复 bug ：gitbook-plugin-anchor-navigation 不正常显示
- * 4. 该插件依赖 https://plugins.gitbook.com/plugin/anchors @Latest: 0.7.1+ 插件，所以 anchors 插件的必须在本插件之前被安装到book.json中
- * 5. 页面如果缺少h[1-3]标签，那么不会生成和替换任何标题
+以下的写法不会被提取：直接写h2标签
+## h2 
 
-### Be careful
-#### en
-To properly generate navigation, follow these levels
-|- H1
-|--h2
-|---h3
-The wrong way:
-|--h2
-|---h3
+```
 
-#### cn
-想要正确生成导航，请按照以下层级
-|- h1
-|--h2
-|---h3
-错误的写法是：
-|--h2
-|---h3
-也就是说，一般我们都会按照层级来书写。
+### 致敬
+本插件结合以下插件的功能，并直接重构他们的源码。
+1. https://github.com/zhangzq/gitbook-plugin-navigator
+2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
+
 
 ### Sample
  https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html
@@ -53,7 +42,6 @@ Add it to your `book.json` configuration:
 ```
 {
   "plugins": [
-	   "anchors",
        "anchor-navigation-ex"
   ]
 }
@@ -80,11 +68,19 @@ You can force the use of svg pre-processed by adding to your book.json:
 ```
  
 
-isRewritePageTitle :
-* en : Do you want to overwrite the page title, true: will overwrite the anchors plug-in anchor effect
-* cn : 是否重写页面标题，true:将会覆盖anchors插件锚点效果
+**isRewritePageTitle :**
+ 是否重写页面标题，true: 将会按照当前页标题顺序自动重写标题,比如：
+```
+源码标题为：
+# 我是h1标题
+## 我是h2标题
+被重写之后：在页面看到的效果将是
+1. 我是h1标题
+1.1 我是h2标题
+```
 
-## or Install locally
+
+### or Install locally
 
 ```
 $ npm install gitbook-plugin-anchor-navigation-ex --save
@@ -93,10 +89,12 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
 ### Update record
+#### 2017-02-06
+* 完全重写代码
+* 合并锚点和悬浮导航效果，现在只需要引入一个插件了 gitbook-plugin-anchor-navigation-ex
+
 #### 2017-01-18
-* en : Page without h[1-3] tag generation failed
-* cn : 页面没有h[1-3] 标签生成失败
+* 页面没有h[1-3] 标签生成失败
 
 #### 2017-01-22
-* en : 2017-01-18 fix bug
-* cn : 2017-01-18 提交的有问题。重新修复
+* 2017-01-18 提交的有问题。重新修复
