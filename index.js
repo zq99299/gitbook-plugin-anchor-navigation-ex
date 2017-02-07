@@ -20,7 +20,7 @@ function get_id(text) {
  */
 function handlerOption(defaultOption, configOption) {
     if (configOption) {
-        for (let item in defaultOption) {
+        for (var item in defaultOption) {
             if (item in configOption) {
                 defaultOption[item] = configOption[item];
             }
@@ -36,8 +36,7 @@ function handlerOption(defaultOption, configOption) {
  * @returns {Array} 返回处理好的tocs合集
  */
 function handlerTocs($, option, section) {
-    let tocs = [];
-    let title = "";
+    var tocs = [];
     var count = {
         h1: 0,
         h2: 0,
@@ -94,8 +93,8 @@ function handlerTitle(option, header, id, title) {
  * @param tocs 根节点
  */
 function handlerH1Toc(option, count, header, tocs) {
-    let title = header.text();
-    let id = header.attr('id');
+    var title = header.text();
+    var id = header.attr('id');
     if (option.isRewritePageTitle) {
         count.h1 = count.h1 + 1;
         count.h2 = 0;
@@ -115,14 +114,14 @@ function handlerH1Toc(option, count, header, tocs) {
  * @param header
  */
 function handlerH2Toc(option, count, header, tocs) {
-    let title = header.text();
-    let id = header.attr('id');
+    var title = header.text();
+    var id = header.attr('id');
     if (tocs.length <= 0) {
         handlerTitle(option, header, id, title);
         return;
     }
-    let h1Index = tocs.length - 1;
-    let h1Toc = tocs[h1Index];
+    var h1Index = tocs.length - 1;
+    var h1Toc = tocs[h1Index];
     if (option.isRewritePageTitle) {
         count.h2 = count.h2 + 1;
         count.h3 = 0;
@@ -141,20 +140,20 @@ function handlerH2Toc(option, count, header, tocs) {
  * @param header
  */
 function handlerH3Toc(option, count, header, tocs) {
-    let title = header.text();
-    let id = header.attr('id');
+    var title = header.text();
+    var id = header.attr('id');
     if (tocs.length <= 0) {
         handlerTitle(option, header, id, title);
         return;
     }
-    let h1Index = tocs.length - 1;
-    let h1Toc = tocs[h1Index];
-    let h2Tocs = h1Toc.children;
+    var h1Index = tocs.length - 1;
+    var h1Toc = tocs[h1Index];
+    var h2Tocs = h1Toc.children;
     if (h2Tocs.length <= 0) {
         handlerTitle(option, header, id, title);
         return;
     }
-    let h2Toc = h1Toc.children[h2Tocs.length - 1];
+    var h2Toc = h1Toc.children[h2Tocs.length - 1];
     if (option.isRewritePageTitle) {
         count.h3 = count.h3 + 1;
         title = (count.h1 + "." + count.h2 + "." + count.h3 + ". " + title);
@@ -178,7 +177,7 @@ function handlerAnchorsNavbar($, option, tocs, section) {
     if (tocs.length <= 0) {
         return;
     }
-    for (let i = 0; i < tocs.length; i++) {
+    for (var i = 0; i < tocs.length; i++) {
         html += "<li><a href='#" + tocs[i].url + "'>" + tocs[i].name + "</a></li>";
         if (tocs[i].children.length > 0) {
             html += "<ul>"
@@ -220,7 +219,7 @@ module.exports = {
             handlerOption(defaultOption, configOption);
             var $ = cheerio.load(section.content);
             // 处理toc相关，同时处理标题和id
-            let tocs = handlerTocs($, defaultOption, section);
+            var tocs = handlerTocs($, defaultOption, section);
             // 设置处理之后的内容
             if (tocs.length == 0) {
                 section.content = $.html();

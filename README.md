@@ -90,6 +90,8 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
 ### Update record
+#### 2017-02-07
+* 在源码中使用了 let 等es6的语法，在本地使用ok，在gitbook上报错：PluginError: Error with plugin "anchor-navigation-ex": Block-scoped declarations (let, const, function, class) not yet supported outside strict mode。不知道是为何，还是改成 var 来声明吧
 #### 2017-02-06
 * 完全重写代码
 * 合并锚点和悬浮导航效果，现在只需要引入一个插件了 gitbook-plugin-anchor-navigation-ex
