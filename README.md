@@ -94,6 +94,9 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
 ### Update record
+#### v0.1.8 - 2017-02-09 
+* 更换锚点图标显示，更换为css样式。不然 pdf生成的时候会失败
+
 #### v0.1.7 - 2017-02-09 
 * css 命名重构
 * 更换锚点图标显示，更换为github一致的svg图标

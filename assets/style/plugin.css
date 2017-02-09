@@ -52,13 +52,11 @@ a.anchor-navigation-ex-anchor {
     bottom: 0;
 }
 
-a.anchor-navigation-ex-anchor svg {
+a.anchor-navigation-ex-anchor i {
     margin-left: -30px;
-    color: #000;
+    /*color: #000;*/
     vertical-align: middle;
-    height: 16px;
-    width: 16px
-    /*font-size: 15px !important;*/
+    font-size: 16px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,10 +66,6 @@ h1, h2, h3, h4, h5, h6 {
 h1:hover a.anchor-navigation-ex-anchor, h2:hover a.anchor-navigation-ex-anchor, h3:hover a.anchor-navigation-ex-anchor,
 h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, h6:hover a.anchor-navigation-ex-anchor{
     display: inline-block;
-}
-h1:hover a.anchor-navigation-ex-anchor svg, h2:hover a.anchor-navigation-ex-anchor svg, h3:hover a.anchor-navigation-ex-anchor svg,
-h4:hover a.anchor-navigation-ex-anchor svg, h5:hover a.anchor-navigation-ex-anchor svg, h6:hover a.anchor-navigation-ex-anchor svg{
-    display: inline-block!important;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal {
