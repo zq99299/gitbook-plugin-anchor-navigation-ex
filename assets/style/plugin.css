@@ -69,6 +69,10 @@ h1:hover a.anchor-navigation-ex-anchor, h2:hover a.anchor-navigation-ex-anchor, 
 h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, h6:hover a.anchor-navigation-ex-anchor{
     display: inline-block;
 }
+h1:hover a.anchor-navigation-ex-anchor svg, h2:hover a.anchor-navigation-ex-anchor svg, h3:hover a.anchor-navigation-ex-anchor svg,
+h4:hover a.anchor-navigation-ex-anchor svg, h5:hover a.anchor-navigation-ex-anchor svg, h6:hover a.anchor-navigation-ex-anchor svg{
+    display: inline-block!important;
+}
 
 .book .book-body .page-wrapper .page-inner section.normal {
     overflow: visible;
