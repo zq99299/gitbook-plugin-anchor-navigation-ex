@@ -1,9 +1,21 @@
 Math integration with GitBook
 ==============
-### 本插件的功能：
+
+### 插件效果
+* 风格：极简
+* 效果图
+  - Sample: https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html
+ ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo.jpg)
+ ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo2.jpg)
+ ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo3.jpg)
+ 
+
+
+### 插件功能：
 1. 添加toc到侧边悬浮导航
 2. 可自动提取页面标题排序
 3. 默认给页面所有标题添加 锚点效果
+
 ### 注意事项：
 1. 本插件只会提取 h[1-3] 标签作为悬浮导航
 2. 只有按照以下顺序嵌套才会被提取
@@ -26,14 +38,6 @@ Math integration with GitBook
 本插件结合以下插件的功能，并直接重构他们的源码。
 1. https://github.com/zhangzq/gitbook-plugin-navigator
 2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
-
-
-### Sample
- https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html
- 
- ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo2.jpg)
- ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo.jpg)
-
 
 
 ### How to use it?
