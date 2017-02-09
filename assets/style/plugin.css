@@ -1,4 +1,4 @@
-#anchors-navbar{
+#anchor-navigation-ex-navbar {
     border: 1px solid #ccc;
     box-shadow: 5px 5px 2px #ccc;
     padding: 5px 10px;
@@ -16,17 +16,17 @@
     overflow-x: hidden;
 }
 
-#anchors-navbar ul{
+#anchor-navigation-ex-navbar ul {
     display: none;
     text-align: left;
     padding-right: 10px;
 }
 
-#anchors-navbar:hover ul{
+#anchor-navigation-ex-navbar:hover ul {
     display: block;
 }
 
-#goTop{
+#anchorNavigationExGoTop {
     position: fixed;
     right: 50px;
     bottom: 68px;
@@ -40,7 +40,7 @@
     color: #333;
 }
 
-a.plugin-anchor {
+a.anchor-navigation-ex-anchor {
     color: inherit !important;
     display: none;
     margin-left: -30px;
@@ -52,17 +52,21 @@ a.plugin-anchor {
     bottom: 0;
 }
 
-a.plugin-anchor i {
+a.anchor-navigation-ex-anchor svg {
     margin-left: -30px;
-    font-size: 15px !important;
+    color: #000;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px
+    /*font-size: 15px !important;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-h1:hover a.plugin-anchor, h2:hover a.plugin-anchor, h3:hover a.plugin-anchor,
-h4:hover a.plugin-anchor, h5:hover a.plugin-anchor, h6:hover a.plugin-anchor {
+h1:hover a.anchor-navigation-ex-anchor, h2:hover a.anchor-navigation-ex-anchor, h3:hover a.anchor-navigation-ex-anchor,
+h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, h6:hover a.anchor-navigation-ex-anchor {
     display: inline-block;
 }
 

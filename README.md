@@ -90,6 +90,13 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
 ### Update record
+#### v0.1.7 - 2017-02-09 
+* css 命名重构
+* 更换锚点图标显示，更换为github一致的svg图标
+* 生成的目录增加到页面顶端，在某些情况下，会在页面底部来一个导航。很不美观，如：
+  - 在gitbook首页的时候因为不会加载插件的css效果
+  - 在生成pdf的时候，css没法被加载
+
 #### 2017-02-08
 * 重构项目结构
 
