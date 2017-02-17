@@ -94,6 +94,13 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
 ### Update record
+#### v0.1.9 - 2017-02-17
+优化悬浮导航的样式
+1. 将阴影缩小，面板背景略微透明
+2. 文字显示为 14 px
+3. 标题编号 加粗显示
+4. 适配 官方默认3套主题样式。导航样式将随着皮肤主题的样式变换而变换
+
 #### v0.1.8 - 2017-02-09 
 * 更换锚点图标显示，更换为css样式。不然 pdf生成的时候会失败
 

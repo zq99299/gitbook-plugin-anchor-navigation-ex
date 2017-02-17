@@ -1,9 +1,9 @@
 #anchor-navigation-ex-navbar {
     border: 1px solid #ccc;
-    box-shadow: 5px 5px 2px #ccc;
+    box-shadow: 1px 1px 1px #ccc;
     padding: 5px 10px;
     position: fixed;
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.98);
     right: 50px;
     top: 68px;
     font-size: 12px;
@@ -26,6 +26,42 @@
     display: block;
 }
 
+#anchor-navigation-ex-navbar ul li a {
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 14px;
+    color: #364149;
+    background: 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+#anchor-navigation-ex-navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/*对应官网皮肤主题颜色*/
+
+.book.color-theme-1 #anchor-navigation-ex-navbar {
+    color: #afa790;
+    background: #111111
+}
+
+.book.color-theme-1 #anchor-navigation-ex-navbar ul li a {
+    color: #877f6a;
+}
+
+.book.color-theme-2 #anchor-navigation-ex-navbar {
+    color: #bcc1d2;
+    background: #2d3143;
+}
+
+.book.color-theme-2 #anchor-navigation-ex-navbar ul li a {
+    color: #c1c6d7;
+}
+
 #anchorNavigationExGoTop {
     position: fixed;
     right: 50px;
@@ -35,7 +71,7 @@
     cursor: pointer;
     font-size: 12px;
     padding: 5px 10px;
-    box-shadow: 5px 5px 2px #ccc;
+    box-shadow: 1px 1px 1px #ccc;
     background-color: #fff;
     color: #333;
 }
@@ -64,10 +100,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1:hover a.anchor-navigation-ex-anchor, h2:hover a.anchor-navigation-ex-anchor, h3:hover a.anchor-navigation-ex-anchor,
-h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, h6:hover a.anchor-navigation-ex-anchor{
+h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, h6:hover a.anchor-navigation-ex-anchor {
     display: inline-block;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal {
     overflow: visible;
 }
+
+
+
+

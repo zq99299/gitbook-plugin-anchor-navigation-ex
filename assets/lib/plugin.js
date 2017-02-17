@@ -90,15 +90,19 @@ function handlerTitle(option, header, id, title) {
 function handlerH1Toc(option, count, header, tocs) {
     var title = header.text();
     var id = header.attr('id');
+    var level = null; //层级
+    var rewrite = title; // 重写以后的标题
     if (option.isRewritePageTitle) {
         count.h1 = count.h1 + 1;
         count.h2 = 0;
         count.h3 = 0;
-        title = count.h1 + ". " + title;
+        level = count.h1 + ". ";
+        rewrite = level + title;
     }
-    handlerTitle(option, header, id, title);
+    handlerTitle(option, header, id, rewrite);
     tocs.push({
         name: title,
+        level: level,
         url: id,
         children: []
     });
@@ -111,6 +115,9 @@ function handlerH1Toc(option, count, header, tocs) {
 function handlerH2Toc(option, count, header, tocs) {
     var title = header.text();
     var id = header.attr('id');
+    var level = null; //层级
+    var rewrite = title; // 重写以后的标题
+
     if (tocs.length <= 0) {
         handlerTitle(option, header, id, title);
         return;
@@ -120,11 +127,13 @@ function handlerH2Toc(option, count, header, tocs) {
     if (option.isRewritePageTitle) {
         count.h2 = count.h2 + 1;
         count.h3 = 0;
-        title = (count.h1 + '.' + count.h2 + ". " + title);
+        level = (count.h1 + '.' + count.h2 + ". ");
+        rewrite = level + title;
     }
-    handlerTitle(option, header, id, title);
+    handlerTitle(option, header, id, rewrite);
     h1Toc.children.push({
         name: title,
+        level: level,
         url: id,
         children: []
     });
@@ -137,6 +146,9 @@ function handlerH2Toc(option, count, header, tocs) {
 function handlerH3Toc(option, count, header, tocs) {
     var title = header.text();
     var id = header.attr('id');
+    var level = null; //层级
+    var rewrite = title; // 重写以后的标题
+
     if (tocs.length <= 0) {
         handlerTitle(option, header, id, title);
         return;
@@ -151,11 +163,13 @@ function handlerH3Toc(option, count, header, tocs) {
     var h2Toc = h1Toc.children[h2Tocs.length - 1];
     if (option.isRewritePageTitle) {
         count.h3 = count.h3 + 1;
-        title = (count.h1 + "." + count.h2 + "." + count.h3 + ". " + title);
+        level = (count.h1 + "." + count.h2 + "." + count.h3 + ". ");
+        rewrite = level + title;
     }
-    handlerTitle(option, header, id, title);
+    handlerTitle(option, header, id, rewrite);
     h2Toc.children.push({
         name: title,
+        level: level,
         url: id,
         children: []
     });
@@ -173,15 +187,18 @@ function handlerAnchorsNavbar($, option, tocs, section) {
         return;
     }
     for (var i = 0; i < tocs.length; i++) {
-        html += "<li><a href='#" + tocs[i].url + "'>" + tocs[i].name + "</a></li>";
-        if (tocs[i].children.length > 0) {
+        var h1Toc = tocs[i];
+        html += "<li><a href='#" + h1Toc.url + "'><b>" + h1Toc.level + "</b>" + h1Toc.name + "</a></li>";
+        if (h1Toc.children.length > 0) {
             html += "<ul>"
-            for (var j = 0; j < tocs[i].children.length; j++) {
-                html += "<li><a href='#" + tocs[i].children[j].url + "'>" + tocs[i].children[j].name + "</a></li>";
-                if (tocs[i].children[j].children.length > 0) {
+            for (var j = 0; j < h1Toc.children.length; j++) {
+                var h2Toc = h1Toc.children[j];
+                html += "<li><a href='#" + h2Toc.url + "'><b>" + h2Toc.level + "</b>" + h2Toc.name + "</a></li>";
+                if (h2Toc.children.length > 0) {
                     html += "<ul>";
-                    for (var k = 0; k < tocs[i].children[j].children.length; k++) {
-                        html += "<li><a href='#" + tocs[i].children[j].children[k].url + "'>" + tocs[i].children[j].children[k].name + "</a></li>";
+                    for (var k = 0; k < h2Toc.children.length; k++) {
+                        var h3Toc = h2Toc.children[k];
+                        html += "<li><a href='#" + h3Toc.url + "'><b>" + h3Toc.level + "</b>" + h3Toc.name + "</a></li>";
                     }
                     html += "</ul>";
                 }
