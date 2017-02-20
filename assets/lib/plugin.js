@@ -225,7 +225,7 @@ function start(bookIns, page) {
         //是否重写页面标题，true:将会覆盖anchors插件锚点效果
         isRewritePageTitle: true,
         //是否显示toc 标题前面的icon
-        isShowTocTitleIcon: true,
+        isShowTocTitleIcon: false,
         tocLevel1Icon: "fa fa-hand-o-right",
         tocLevel2Icon: "fa fa-hand-o-right",
         tocLevel3Icon: "fa fa-hand-o-right"

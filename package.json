@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Add TOC to the side of the suspended navigation, can automatically extract the default page title sort, add anchor point effect to all the title page",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "keywords": [
     "gitbook",
     "plugin",
-	"anchor-navigation-ex",
-	"ex"
+    "anchor-navigation-ex",
+    "ex"
   ],
   "author": "zhuqiang",
   "license": "GPL-3.0",
@@ -30,12 +30,32 @@
     "gitbook": "*"
   },
   "gitbook": {
-        "properties": {
-            "isRewritePageTitle": {
-                "type": "boolean",
-                "default": true,
-                "title": "重写页面标题，按每页的h标题增加层级序号"
-            }
-        }
+    "properties": {
+      "isRewritePageTitle": {
+        "type": "boolean",
+        "default": true,
+        "title": "isRewritePageTitle"
+      },
+      "isShowTocTitleIcon": {
+        "type": "boolean",
+        "default": false,
+        "title": "isRewritePageTitle"
+      },
+      "tocLevel1Icon": {
+        "type": "boolean",
+        "default": "",
+        "title": "tocLevel1Icon"
+      },
+      "tocLevel2Icon": {
+        "type": "boolean",
+        "default": "",
+        "title": "tocLevel2Icon"
+      },
+      "tocLevel3Icon": {
+        "type": "boolean",
+        "default": "",
+        "title": "tocLevel3Icon"
+      }
     }
+  }
 }
