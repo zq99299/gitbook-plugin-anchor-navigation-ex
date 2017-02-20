@@ -1,4 +1,4 @@
-DOC：[中文](https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html)，English
+DOC：[中文](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/README.md)，English
 
 Math integration with GitBook
 
