@@ -87,6 +87,7 @@ $ gitbook install ./
 
 - **isRewritePageTitle :** 
 是否重写页面标题，true: 将会按照当前页标题顺序自动重写标题,比如：
+
 ```
 源码标题为：
 # 我是h1标题

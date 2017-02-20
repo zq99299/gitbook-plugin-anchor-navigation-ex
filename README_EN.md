@@ -90,6 +90,7 @@ You can force the use of svg pre-processed by adding to your book.json:
 - **isRewritePageTitle :** 
 If you override the page title, true (default): the title will be automatically rewritten in accordance with the current page title sequence, false: do not rewrite
 For example:
+
 ```
 源码标题为：
 # 我是h1标题
