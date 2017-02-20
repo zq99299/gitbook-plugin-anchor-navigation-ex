@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Add TOC to the side of the suspended navigation, can automatically extract the default page title sort, add anchor point effect to all the title page",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
       "isShowTocTitleIcon": {
         "type": "boolean",
         "default": false,
-        "title": "isRewritePageTitle"
+        "title": "isShowTocTitleIcon"
       },
       "tocLevel1Icon": {
         "type": "string",
