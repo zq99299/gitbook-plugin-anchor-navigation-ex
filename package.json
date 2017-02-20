@@ -42,17 +42,17 @@
         "title": "isRewritePageTitle"
       },
       "tocLevel1Icon": {
-        "type": "boolean",
+        "type": "string",
         "default": "",
         "title": "tocLevel1Icon"
       },
       "tocLevel2Icon": {
-        "type": "boolean",
+        "type": "string",
         "default": "",
         "title": "tocLevel2Icon"
       },
       "tocLevel3Icon": {
-        "type": "boolean",
+        "type": "string",
         "default": "",
         "title": "tocLevel3Icon"
       }
