@@ -75,10 +75,10 @@ $ gitbook install ./
  "pluginsConfig": {	   
 		"anchor-navigation-ex":{
 			"isRewritePageTitle":true,
-			"isShowTocTitleIcon": true,
-            "tocLevel1Icon: "fa fa-hand-o-right",
-            "tocLevel2Icon: "fa fa-hand-o-right",
-            "tocLevel3Icon: "fa fa-hand-o-right"
+			"isShowTocTitleIcon":true,
+            "tocLevel1Icon":"fa fa-hand-o-right",
+            "tocLevel2Icon":"fa fa-hand-o-right",
+            "tocLevel3Icon":"fa fa-hand-o-right"
 		}	   
   }	
 }

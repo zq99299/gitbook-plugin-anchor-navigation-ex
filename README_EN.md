@@ -77,10 +77,10 @@ You can force the use of svg pre-processed by adding to your book.json:
  "pluginsConfig": {	   
 		"anchor-navigation-ex":{
 			"isRewritePageTitle":true,
-			"isShowTocTitleIcon": true,
-            "tocLevel1Icon: "fa fa-hand-o-right",
-            "tocLevel2Icon: "fa fa-hand-o-right",
-            "tocLevel3Icon: "fa fa-hand-o-right"
+			"isShowTocTitleIcon":true,
+            "tocLevel1Icon":"fa fa-hand-o-right",
+            "tocLevel2Icon":"fa fa-hand-o-right",
+            "tocLevel3Icon":"fa fa-hand-o-right"
 		}	   
   }	
 }
