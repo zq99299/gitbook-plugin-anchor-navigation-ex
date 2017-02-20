@@ -186,19 +186,27 @@ function handlerAnchorsNavbar($, option, tocs, section) {
     if (tocs.length <= 0) {
         return;
     }
+    var tocLevel1Icon = option.tocLevel1Icon;
+    var tocLevel2Icon = option.tocLevel2Icon;
+    var tocLevel3Icon = option.tocLevel3Icon;
+    if (!option.isShowTocTitleIcon) {
+        tocLevel1Icon = "";
+        tocLevel2Icon = "";
+        tocLevel3Icon = "";
+    }
     for (var i = 0; i < tocs.length; i++) {
         var h1Toc = tocs[i];
-        html += "<li><a href='#" + h1Toc.url + "'><b>" + h1Toc.level + "</b>" + h1Toc.name + "</a></li>";
+        html += "<li><span class='title-icon " + tocLevel1Icon + "'></span><a href='#" + h1Toc.url + "'><b>" + h1Toc.level + "</b>" + h1Toc.name + "</a></li>";
         if (h1Toc.children.length > 0) {
             html += "<ul>"
             for (var j = 0; j < h1Toc.children.length; j++) {
                 var h2Toc = h1Toc.children[j];
-                html += "<li><a href='#" + h2Toc.url + "'><b>" + h2Toc.level + "</b>" + h2Toc.name + "</a></li>";
+                html += "<li><span class='title-icon " + tocLevel2Icon + "'></span><a href='#" + h2Toc.url + "'><b>" + h2Toc.level + "</b>" + h2Toc.name + "</a></li>";
                 if (h2Toc.children.length > 0) {
                     html += "<ul>";
                     for (var k = 0; k < h2Toc.children.length; k++) {
                         var h3Toc = h2Toc.children[k];
-                        html += "<li><a href='#" + h3Toc.url + "'><b>" + h3Toc.level + "</b>" + h3Toc.name + "</a></li>";
+                        html += "<li><span class='title-icon " + tocLevel3Icon + "'></span><a href='#" + h3Toc.url + "'><b>" + h3Toc.level + "</b>" + h3Toc.name + "</a></li>";
                     }
                     html += "</ul>";
                 }
@@ -215,7 +223,12 @@ function handlerAnchorsNavbar($, option, tocs, section) {
 function start(bookIns, page) {
     const defaultOption = {
         //是否重写页面标题，true:将会覆盖anchors插件锚点效果
-        isRewritePageTitle: true
+        isRewritePageTitle: true,
+        //是否显示toc 标题前面的icon
+        isShowTocTitleIcon: true,
+        tocLevel1Icon: "fa fa-hand-o-right",
+        tocLevel2Icon: "fa fa-hand-o-right",
+        tocLevel3Icon: "fa fa-hand-o-right"
     }
     /**
      * [configOption: config option]

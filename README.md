@@ -1,20 +1,34 @@
-Math integration with GitBook
+DOC：中文，[English](https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html)
+
+GitBook 插件：gitbook-plugin-anchor-navigation-ex
+
 ==============
 
 ### 插件效果
 * 风格：极简
 * 效果图
   - Sample: https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html
- ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo.jpg)
- ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo2.jpg)
- ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/gitbook-plugin-anchor-navigation-ex-demo3.jpg)
- 
-
+  - night主题展示
+  ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/night主题展示.jpg)
+  - sepia主题展示
+  ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/sepia主题展示.jpg)
+  - white主题展示
+  ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/white主题展示.jpg)    
+  - 锚点效果和top展示
+  ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/锚点效果和top展示.jpg) 
+  - toc标题icon展示
+  ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/toc标题icon展示.jpg) 
+  - toc标题icon展示
+  ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/toc标题icon展示2.jpg) 
+   - toc标题无icon展示
+   ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/toc标题无icon展示.jpg)      
 
 ### 插件功能：
-1. 添加toc到侧边悬浮导航
+1. 添加Toc到侧边悬浮导航
 2. 可自动提取页面标题排序
 3. 默认给页面所有标题添加 锚点效果
+4. 可定制TocIcon是否显示和显示的图标
+5. 样式跟随gitbook 默认主题 样式（默认主题样式切换本插件样式也跟随切换）
 
 ### 注意事项：
 1. 本插件只会提取 h[1-3] 标签作为悬浮导航
@@ -34,15 +48,9 @@ Math integration with GitBook
 
 ```
 
-### 致敬
-本插件结合以下插件的功能，并直接重构他们的源码。
-1. https://github.com/zhangzq/gitbook-plugin-navigator
-2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
+### 怎么使用本插件？
 
-
-### How to use it?
-
-Add it to your `book.json` configuration:
+在你的 `book.json` 中增加插件：
 
 ```
 {
@@ -52,29 +60,33 @@ Add it to your `book.json` configuration:
 }
 ```
 
-Install your plugins using:
+然后安装插件:
 
 ```
 $ gitbook install ./
 ``` 
 
-### Configuration
+### 定制插件功能
 
-You can force the use of svg pre-processed by adding to your book.json:
+在你的 book.json 中配置:
 
 ```
 {
  "pluginsConfig": {	   
 		"anchor-navigation-ex":{
-			"isRewritePageTitle":true
+			"isRewritePageTitle":true,
+			"isShowTocTitleIcon": true,
+            "tocLevel1Icon: "fa fa-hand-o-right",
+            "tocLevel2Icon: "fa fa-hand-o-right",
+            "tocLevel3Icon: "fa fa-hand-o-right"
 		}	   
   }	
 }
 ```
  
 
-**isRewritePageTitle :**
- 是否重写页面标题，true: 将会按照当前页标题顺序自动重写标题,比如：
+- **isRewritePageTitle :** 
+是否重写页面标题，true: 将会按照当前页标题顺序自动重写标题,比如：
 ```
 源码标题为：
 # 我是h1标题
@@ -83,9 +95,26 @@ You can force the use of svg pre-processed by adding to your book.json:
 1. 我是h1标题
 1.1 我是h2标题
 ```
+- **isShowTocTitleIcon :** 
+是否显示悬浮导航TOC标题前的图标，true:显示，false:不显示（默认）
+- **tocLevel1Icon :** 
+悬浮导航TOC标题前的H1图标样式. 默认为空；示例：比如：fa fa-address-book 
+- **tocLevel2Icon :** 
+悬浮导航TOC标题前的H2图标样式. 默认为空；示例：比如：fa fa-address-book
+- **tocLevel3Icon :** 
+悬浮导航TOC标题前的H3图标样式. 默认为空；示例：比如：fa fa-address-book
+
+#### 关于悬浮导航TOC标题前的图标样式支持说明
+悬浮导航TOC标题前的图标样式。可接收的值得有：`http://fontawesome.dashgame.com/` 中标出来的图标；
+比如：fa fa-address-book
+
+理论上支持所有css图标，前提是得引入css。
+
+由于`http://fontawesome.dashgame.com/`该css是官方主题引用的。所以你不用额外的引入了
 
 
-### or Install locally
+
+### 或则安装到本地
 
 ```
 $ npm install gitbook-plugin-anchor-navigation-ex --save
@@ -93,7 +122,12 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
+
 ### Update record
+#### v0.1.9 - 2017-02-17
+1. 进一步优化悬浮导航的样式，和官方默认主题保持一致，更加美观，和格调统一
+2. 增加 悬浮导航toc标题前的图标定制
+
 #### v0.1.9 - 2017-02-17
 优化悬浮导航的样式
 1. 将阴影缩小，面板背景略微透明
@@ -126,3 +160,10 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 #### 2017-01-22
 * 2017-01-18 提交的有问题。重新修复
+
+
+
+### 致敬
+本插件结合以下插件的功能，并直接重构他们的源码。
+1. https://github.com/zhangzq/gitbook-plugin-navigator
+2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation

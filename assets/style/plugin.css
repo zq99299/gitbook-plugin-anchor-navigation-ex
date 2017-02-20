@@ -1,9 +1,13 @@
 #anchor-navigation-ex-navbar {
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #ccc;
+    background-color: #fafafa;
+    border: 1px solid rgba(0, 0, 0, .07);
+    border-radius: 1px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-clip: padding-box;
     padding: 5px 10px;
     position: fixed;
-    background-color: rgba(255,255,255,0.98);
+    /*background-color: rgba(255,255,255,0.98);*/
     right: 50px;
     top: 68px;
     font-size: 12px;
@@ -20,6 +24,8 @@
     display: none;
     text-align: left;
     padding-right: 10px;
+    padding-left: 10px;
+    list-style-type: none;
 }
 
 #anchor-navigation-ex-navbar:hover ul {
@@ -42,11 +48,16 @@
     text-decoration: underline;
 }
 
+#anchor-navigation-ex-navbar ul li .title-icon {
+    padding-right: 4px;
+}
+
 /*对应官网皮肤主题颜色*/
 
 .book.color-theme-1 #anchor-navigation-ex-navbar {
+    background-color: #111111;
+    border-color: #7e888b;
     color: #afa790;
-    background: #111111
 }
 
 .book.color-theme-1 #anchor-navigation-ex-navbar ul li a {
@@ -54,8 +65,9 @@
 }
 
 .book.color-theme-2 #anchor-navigation-ex-navbar {
+    background-color: #2d3143;
+    border-color: #272a3a;
     color: #bcc1d2;
-    background: #2d3143;
 }
 
 .book.color-theme-2 #anchor-navigation-ex-navbar ul li a {
@@ -66,14 +78,30 @@
     position: fixed;
     right: 50px;
     bottom: 68px;
-    border: 1px solid #ccc;
+    background-color: #fafafa;
+    border: 1px solid rgba(0, 0, 0, .07);
+    border-radius: 1px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-clip: padding-box;
     z-index: 999;
     cursor: pointer;
     font-size: 12px;
     padding: 5px 10px;
-    box-shadow: 1px 1px 1px #ccc;
-    background-color: #fff;
-    color: #333;
+    color: #364149;
+}
+
+/*对应官网皮肤主题颜色*/
+.book.color-theme-1 #anchorNavigationExGoTop {
+    background-color: #111111;
+    border-color: #7e888b;
+    color: #afa790;
+}
+
+.book.color-theme-2 #anchorNavigationExGoTop {
+    background-color: #2d3143;
+    border-color: #272a3a;
+    color: #bcc1d2;
 }
 
 a.anchor-navigation-ex-anchor {
