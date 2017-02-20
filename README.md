@@ -1,4 +1,4 @@
-DOC：中文，[English](https://zq99299.gitbooks.io/gitbook-guide/content/chapter/plugin.html)
+DOC：中文，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/README_EN.md)
 
 GitBook 插件：gitbook-plugin-anchor-navigation-ex
 
