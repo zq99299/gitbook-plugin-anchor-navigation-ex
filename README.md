@@ -126,7 +126,7 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 ### Update record
 #### v0.1.9 - 2017-02-17
 1. 进一步优化悬浮导航的样式，和官方默认主题保持一致，更加美观，和格调统一
-2. 增加 悬浮导航toc标题前的图标定制
+2. 增加 悬浮导航toc标题前的图标定制 [#2](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/issues/2)
 
 #### v0.1.9 - 2017-02-17
 优化悬浮导航的样式
