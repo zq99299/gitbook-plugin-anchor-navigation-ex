@@ -128,16 +128,17 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
+
 #### v0.2.5 - 2017-02-17
-1 to further optimize the suspension navigation style, and the official theme of the default to maintain the same, more beautiful, and unified style
-2 increase the suspension navigation TOC icon icon before the custom
+* to further optimize the suspension navigation style, and the official theme of the default to maintain the same, more beautiful, and unified style
+* increase the suspension navigation TOC icon icon before the custom
 
 #### v0.1.9 - 2017-02-17
 Optimized navigation style
-1 reduce the shadow, slightly transparent panel background
-2 text display is 14 PX
-3 title number in bold
-4 adapt to the official default theme of the 3 sets. The navigation style will change with the style of the theme of the skin
+* reduce the shadow, slightly transparent panel background
+* text display is 14 PX
+* title number in bold
+* adapt to the official default theme of the 3 sets. The navigation style will change with the style of the theme of the skin
 
 #### v0.1.8 - 2017-02-09
 * change the anchor icon display, the replacement for the CSS style. Otherwise, the PDF will fail to generate
