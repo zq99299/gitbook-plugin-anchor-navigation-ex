@@ -25,11 +25,11 @@ Math integration with GitBook
 
 ### plug-in function:
 
-1 add Toc to side navigation
-2 can automatically extract the page title sort
-3 default page title to all add anchor point effect
-4 customizable TocIcon display and display icons
-The 5 style follows the gitbook default theme style (the default theme style switches the plugin style also follows the switch)
+1. add Toc to side navigation
+2. can automatically extract the page title sort
+3. default page title to all add anchor point effect
+4. customizable TocIcon display and display icons
+5. style follows the gitbook default theme style (the default theme style switches the plugin style also follows the switch)
 
 ### note:
 
