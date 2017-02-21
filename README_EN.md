@@ -167,7 +167,8 @@ When the gitbook home page because it will not load the plug-in CSS effect
 
 
 
-### 致敬
-本插件结合以下插件的功能，并直接重构他们的源码。
+### salute
+This plugin combines the features of the following plug-ins, and directly reconstructs their source code.
+
 1. https://github.com/zhangzq/gitbook-plugin-navigator
 2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
