@@ -28,11 +28,11 @@ Math integration with GitBook
 
 ### plug-in function:
 
-1 add Toc to side navigation
-2 can automatically extract the page title sort
-3 default page title to all add anchor point effect
-4 customizable TocIcon display and display icons
-The 5 style follows the gitbook default theme style (the default theme style switches the plugin style also follows the switch)
+1. add Toc to side navigation
+2. can automatically extract the page title sort
+3. default page title to all add anchor point effect
+4. customizable TocIcon display and display icons
+5. style follows the gitbook default theme style (the default theme style switches the plugin style also follows the switch)
 
 ### note:
 
@@ -131,38 +131,48 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
-#### v0.1.9 - 2017-02-17
-1 to further optimize the suspension navigation style, and the official theme of the default to maintain the same, more beautiful, and unified style
-2 increase the suspension navigation TOC icon icon before the custom
+
+#### v0.2.5 - 2017-02-17
+* to further optimize the suspension navigation style, and the official theme of the default to maintain the same, more beautiful, and unified style
+* increase the suspension navigation TOC icon icon before the custom
+
 #### v0.1.9 - 2017-02-17
 Optimized navigation style
-1 reduce the shadow, slightly transparent panel background
-2 text display is 14 PX
-3 title number in bold
-4 adapt to the official default theme of the 3 sets. The navigation style will change with the style of the theme of the skin
+* reduce the shadow, slightly transparent panel background
+* text display is 14 PX
+* title number in bold
+* adapt to the official default theme of the 3 sets. The navigation style will change with the style of the theme of the skin
+
 #### v0.1.8 - 2017-02-09
 * change the anchor icon display, the replacement for the CSS style. Otherwise, the PDF will fail to generate
+
 #### v0.1.7 - 2017-02-09
 * CSS named refactoring
 * change the anchor icon display, the replacement for the GitHub consistent SVG Icon
 * the generated directory is added to the top of the page and, in some cases, a navigation at the bottom of the page. Very unsightly, such as:
 When the gitbook home page because it will not load the plug-in CSS effect
 - CSS cannot be loaded while generating pdf
+
 #### 2017-02-08
 * rebuild project structure
+
 #### 2017-02-07
 * in the source code using the let and ES6 syntax, the use of OK in local, reported in gitbook: PluginError: Error with plugin "anchor-navigation-ex": Block-scoped declarations (let, const, function, class) not yet supported outside strict mode. Do not know why, or to VaR to declare it
+
 #### 2017-02-06
 * completely rewriting code
 * with anchor and suspended navigation effect, now only need to introduce a plug-in gitbook-plugin-anchor-navigation-ex
+
 #### 2017-01-18
 * page without h[1-3] tag generation failed
+
 #### 2017-01-22
 * 2017-01-18 submitted a problem. Re repair
 
 
 
-### 致敬
-本插件结合以下插件的功能，并直接重构他们的源码。
+### salute
+This plugin combines the features of the following plug-ins, and directly reconstructs their source code.
+
 1. https://github.com/zhangzq/gitbook-plugin-navigator
 2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
