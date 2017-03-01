@@ -143,6 +143,7 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 #### v0.1.9 - 2017-02-17
 Optimized navigation style
+
 * reduce the shadow, slightly transparent panel background
 * text display is 14 PX
 * title number in bold
