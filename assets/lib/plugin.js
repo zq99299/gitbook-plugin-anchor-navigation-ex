@@ -1,10 +1,3 @@
-/**
- * 本插件修改源插件的功能：综合修复了原有的bug和兼容性
- * 1. 基于 https://github.com/zhangzq/gitbook-plugin-navigator
- * 2. 基于 https://github.com/yaneryou/gitbook-plugin-anchor-navigation
- * 3. 修复 bug ：gitbook-plugin-anchor-navigation 不正常显示
- * 4. 该插件依赖 https://plugins.gitbook.com/plugin/anchors 插件，所以 anchors 插件的必须在本插件之前
- */
 var cheerio = require('cheerio');
 var slug = require('github-slugid');
 
