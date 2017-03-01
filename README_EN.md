@@ -131,6 +131,8 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
+#### v0.2.6 - 2017-03-01
+- fix bug: [#5](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/5)
 
 #### v0.2.5 - 2017-02-17
 * to further optimize the suspension navigation style, and the official theme of the default to maintain the same, more beautiful, and unified style

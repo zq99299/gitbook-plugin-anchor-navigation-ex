@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "0.2.5",
-  "description": "Add TOC to the side of the suspended navigation, can automatically extract the default page title sort, add anchor point effect to all the title page",
+  "version": "0.2.6",
+  "description": "Automatic extraction page h1 - h3 title, added to the page as the side navigation, and automatically add anchor effect, subject to follow the official style",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
