@@ -75,6 +75,7 @@ function handlerTocs($, option, section) {
  */
 function handlerTitle(option, header, id, title) {
     header.text(title);
+    header.attr('id', id);
     header.prepend('<a name="' + id + '" class="anchor-navigation-ex-anchor" '
         + 'href="#' + id + '">'
         + '<i class="fa fa-link" aria-hidden="true"></i>'
@@ -92,10 +93,11 @@ function handlerH1Toc(option, count, header, tocs) {
     var id = header.attr('id');
     var level = null; //层级
     var rewrite = title; // 重写以后的标题
+    count.h1 = count.h1 + 1;
+    count.h2 = 0;
+    count.h3 = 0;
+    id = count.h1 + '_' + id;
     if (option.isRewritePageTitle) {
-        count.h1 = count.h1 + 1;
-        count.h2 = 0;
-        count.h3 = 0;
         level = count.h1 + ". ";
         rewrite = level + title;
     }
@@ -124,9 +126,10 @@ function handlerH2Toc(option, count, header, tocs) {
     }
     var h1Index = tocs.length - 1;
     var h1Toc = tocs[h1Index];
+    count.h2 = count.h2 + 1;
+    count.h3 = 0;
+    id = (count.h1 + '-' + count.h2 + "_") + id;
     if (option.isRewritePageTitle) {
-        count.h2 = count.h2 + 1;
-        count.h3 = 0;
         level = (count.h1 + '.' + count.h2 + ". ");
         rewrite = level + title;
     }
@@ -161,8 +164,9 @@ function handlerH3Toc(option, count, header, tocs) {
         return;
     }
     var h2Toc = h1Toc.children[h2Tocs.length - 1];
+    count.h3 = count.h3 + 1;
+    id = (count.h1 + "-" + count.h2 + "-" + count.h3 + "_") + id;
     if (option.isRewritePageTitle) {
-        count.h3 = count.h3 + 1;
         level = (count.h1 + "." + count.h2 + "." + count.h3 + ". ");
         rewrite = level + title;
     }
