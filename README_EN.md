@@ -131,6 +131,9 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
+#### v0.2.7 - 2017-03-01
+- fix bug: Anchor link index unique [#6](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/6)
+
 #### v0.2.6 - 2017-03-01
 - fix bug: [#5](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/5)
 
