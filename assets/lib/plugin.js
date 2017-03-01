@@ -96,7 +96,7 @@ function handlerH1Toc(option, count, header, tocs) {
     count.h1 = count.h1 + 1;
     count.h2 = 0;
     count.h3 = 0;
-    id = count.h1 + '-' + id;
+    id = count.h1 + '_' + id;
     if (option.isRewritePageTitle) {
         level = count.h1 + ". ";
         rewrite = level + title;
@@ -128,7 +128,7 @@ function handlerH2Toc(option, count, header, tocs) {
     var h1Toc = tocs[h1Index];
     count.h2 = count.h2 + 1;
     count.h3 = 0;
-    id = (count.h1 + '-' + count.h2 + "-") + id;
+    id = (count.h1 + '-' + count.h2 + "_") + id;
     if (option.isRewritePageTitle) {
         level = (count.h1 + '.' + count.h2 + ". ");
         rewrite = level + title;
@@ -165,7 +165,7 @@ function handlerH3Toc(option, count, header, tocs) {
     }
     var h2Toc = h1Toc.children[h2Tocs.length - 1];
     count.h3 = count.h3 + 1;
-    id = (count.h1 + "-" + count.h2 + "-" + count.h3 + "-") + id;
+    id = (count.h1 + "-" + count.h2 + "-" + count.h3 + "_") + id;
     if (option.isRewritePageTitle) {
         level = (count.h1 + "." + count.h2 + "." + count.h3 + ". ");
         rewrite = level + title;
