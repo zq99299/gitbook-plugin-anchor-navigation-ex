@@ -110,6 +110,45 @@ $ gitbook install ./
 - **tocLevel3Icon :** 
 悬浮导航TOC标题前的H3图标样式. 默认为空；示例：比如：fa fa-address-book
 
+#### 关于标题重写 与 主题默认 层级 显示的关系 V0.3.+
+如果你的配置是这样的：
+```
+"pluginsConfig": {	   
+		"anchor-navigation-ex":{
+			"isRewritePageTitle":true
+		},
+       "theme-default": {
+            "showLevel": true
+        }
+  }	
+```
+那么页面标题重写后的示例如下：
+SUMMARY.md
+```
+# Summary
+
+* [前言](README.md)
+
+---
+  xxxxx
+---
+
+* [Redis](chapter/redisREADME.md)
+  * [windows](chapter/redis/windows.md)
+  * [集群](chapter/redis/cluster.md)
+```
+chapter/redis/cluster.md
+```
+# redis集群的准备
+## zlib
+1. 安装redis-cluster依赖:redis-cluster的依赖库在使用时有兼容问题,在reshard时会遇到各种错误,请按指定版本安装.
+2. 确保系统安装zlib,否则gem install会报(no such file to load -- zlib)
+
+...
+```
+最终呈现在页面的效果如下：
+![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/标题重新与默认主题层级相关联.jpg)
+
 #### 关于悬浮导航TOC标题前的图标样式支持说明
 悬浮导航TOC标题前的图标样式。可接收的值得有：`http://fontawesome.dashgame.com/` 中标出来的图标；
 比如：fa fa-address-book
@@ -130,6 +169,10 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
+#### v0.3.0 - 2017-03-06
+- 官方层级显示功能 与  每页 相关联显示功能[#4](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/4)
+
+
 #### v0.2.7 - 2017-03-01
 - fix bug: 锚链接索引唯一 [#6](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/6)
 

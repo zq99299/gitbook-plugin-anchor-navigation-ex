@@ -15,15 +15,25 @@ function handlerOption(defaultOption, configOption) {
         }
     }
 }
+/**
+ * 处理默认主题的层级配置
+ * @param defaultConfig
+ * @param themeDefaultConfig
+ */
+function handlerThemeDefaultConfig(defaultConfig, themeDefaultConfig) {
+    if (themeDefaultConfig) {
+        handlerOption(defaultConfig.themeDefault, themeDefaultConfig);
+    }
+}
 
 /**
  * 处理toc相关，同时处理标题和id
  * @param $
  * @param option
- * @param section
+ * @param page
  * @returns {Array} 返回处理好的tocs合集
  */
-function handlerTocs($, option, section) {
+function handlerTocs($, option, page) {
     var tocs = [];
     var count = {
         h1: 0,
@@ -43,13 +53,13 @@ function handlerTocs($, option, section) {
         if (id) {
             switch (elem.tagName) {
                 case "h1":
-                    handlerH1Toc(option, count, header, tocs);
+                    handlerH1Toc(option, count, header, tocs, page.level);
                     break;
                 case "h2":
-                    handlerH2Toc(option, count, header, tocs);
+                    handlerH2Toc(option, count, header, tocs, page.level);
                     break;
                 case "h3":
-                    handlerH3Toc(option, count, header, tocs);
+                    handlerH3Toc(option, count, header, tocs, page.level);
                     break;
                 default:
                     handlerTitle(option, header, id, header.text());
@@ -81,7 +91,7 @@ function handlerTitle(option, header, id, title) {
  * @param header
  * @param tocs 根节点
  */
-function handlerH1Toc(option, count, header, tocs) {
+function handlerH1Toc(option, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
     var level = null; //层级
@@ -89,10 +99,16 @@ function handlerH1Toc(option, count, header, tocs) {
     count.h1 = count.h1 + 1;
     count.h2 = 0;
     count.h3 = 0;
-    id = count.h1 + '_' + id;
+
     if (option.isRewritePageTitle) {
         level = count.h1 + ". ";
+        if (option.themeDefault.showLevel) {
+            level = pageLevel + "." + level;
+        }
         rewrite = level + title;
+        id = slug(rewrite);
+    } else {
+        id = count.h1 + "-" + id
     }
     handlerTitle(option, header, id, rewrite);
     tocs.push({
@@ -107,7 +123,7 @@ function handlerH1Toc(option, count, header, tocs) {
  * @param count 计数器
  * @param header
  */
-function handlerH2Toc(option, count, header, tocs) {
+function handlerH2Toc(option, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
     var level = null; //层级
@@ -121,10 +137,15 @@ function handlerH2Toc(option, count, header, tocs) {
     var h1Toc = tocs[h1Index];
     count.h2 = count.h2 + 1;
     count.h3 = 0;
-    id = (count.h1 + '-' + count.h2 + "_") + id;
     if (option.isRewritePageTitle) {
         level = (count.h1 + '.' + count.h2 + ". ");
+        if (option.themeDefault.showLevel) {
+            level = pageLevel + "." + level;
+        }
         rewrite = level + title;
+        id = slug(rewrite);
+    } else {
+        id = count.h1 + "" + count.h2 + "-" + id
     }
     handlerTitle(option, header, id, rewrite);
     h1Toc.children.push({
@@ -139,7 +160,7 @@ function handlerH2Toc(option, count, header, tocs) {
  * @param count 计数器
  * @param header
  */
-function handlerH3Toc(option, count, header, tocs) {
+function handlerH3Toc(option, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
     var level = null; //层级
@@ -158,10 +179,15 @@ function handlerH3Toc(option, count, header, tocs) {
     }
     var h2Toc = h1Toc.children[h2Tocs.length - 1];
     count.h3 = count.h3 + 1;
-    id = (count.h1 + "-" + count.h2 + "-" + count.h3 + "_") + id;
     if (option.isRewritePageTitle) {
         level = (count.h1 + "." + count.h2 + "." + count.h3 + ". ");
+        if (option.themeDefault.showLevel) {
+            level = pageLevel + "." + level;
+        }
         rewrite = level + title;
+        id = slug(rewrite);
+    } else {
+        id = count.h1 + "" + count.h2 + count.h3 + "-" + id
     }
     handlerTitle(option, header, id, rewrite);
     h2Toc.children.push({
@@ -225,15 +251,21 @@ function start(bookIns, page) {
         isShowTocTitleIcon: false,
         tocLevel1Icon: "fa fa-hand-o-right",
         tocLevel2Icon: "fa fa-hand-o-right",
-        tocLevel3Icon: "fa fa-hand-o-right"
+        tocLevel3Icon: "fa fa-hand-o-right",
+        themeDefault: {
+            showLevel: false
+        }
     }
     /**
      * [configOption: config option]
      * @type {Object}
      */
     var configOption = bookIns.config.get('pluginsConfig')['anchor-navigation-ex'];
+    var themeDefaultConfig = bookIns.config.get('pluginsConfig')['theme-default'];
     // 处理配置参数
     handlerOption(defaultOption, configOption);
+    handlerThemeDefaultConfig(defaultOption, themeDefaultConfig);
+
     var $ = cheerio.load(page.content);
     // 处理toc相关，同时处理标题和id
     var tocs = handlerTocs($, defaultOption, page);

@@ -111,6 +111,46 @@ Suspended navigation TOC title before the H2 icon style. Default is empty; examp
 - **tocLevel3Icon :** 
 Suspended navigation TOC title before the H3 icon style. Default is empty; example: for example: FA fa-address-book
 
+#### Rewrite the course title and subject shows the relationship between the default level V0.3.+
+If your configuration is as follows:
+```
+"pluginsConfig": {	   
+		"anchor-navigation-ex":{
+			"isRewritePageTitle":true
+		},
+       "theme-default": {
+            "showLevel": true
+        }
+  }	
+```
+So the page title rewritten example is as follows:
+SUMMARY.md
+```
+# Summary
+
+* [前言](README.md)
+
+---
+  xxxxx
+---
+
+* [Redis](chapter/redisREADME.md)
+  * [windows](chapter/redis/windows.md)
+  * [集群](chapter/redis/cluster.md)
+```
+chapter/redis/cluster.md
+```
+# redis集群的准备
+## zlib
+1. 安装redis-cluster依赖:redis-cluster的依赖库在使用时有兼容问题,在reshard时会遇到各种错误,请按指定版本安装.
+2. 确保系统安装zlib,否则gem install会报(no such file to load -- zlib)
+
+...
+```
+The effect of final rendered on the page is as follows:
+![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/标题重新与默认主题层级相关联.jpg)
+
+
 #### on suspended navigation TOC title before icon style support
 Floating navigation TOC icon icon before heading. Can be received worthy of: `http://fontawesome.dashgame.com/` bid out of the icon;
 For example: FA fa-address-book
@@ -131,6 +171,9 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
+#### v0.3.0 - 2017-03-06
+- According to official level is associated with a page display [#4](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/4)
+
 #### v0.2.7 - 2017-03-01
 - fix bug: Anchor link index unique [#6](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/6)
 
