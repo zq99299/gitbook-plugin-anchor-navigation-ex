@@ -83,7 +83,8 @@ You can force the use of svg pre-processed by adding to your book.json:
 			"isShowTocTitleIcon":true,
             "tocLevel1Icon":"fa fa-hand-o-right",
             "tocLevel2Icon":"fa fa-hand-o-right",
-            "tocLevel3Icon":"fa fa-hand-o-right"
+            "tocLevel3Icon":"fa fa-hand-o-right",
+            "isAssociatedWithSummary":true
 		}	   
   }	
 }
@@ -110,6 +111,8 @@ Suspended navigation TOC title before the H1 icon style. Default is empty; examp
 Suspended navigation TOC title before the H2 icon style. Default is empty; example: for example: FA fa-address-book
 - **tocLevel3Icon :** 
 Suspended navigation TOC title before the H3 icon style. Default is empty; example: for example: FA fa-address-book
+- **isAssociatedWithSummary:**
+The page number is associated with the serial number generated in the official SUMMARY. Default =true
 
 #### Rewrite the course title and subject shows the relationship between the default level V0.3.+
 If your configuration is as follows:
@@ -171,6 +174,9 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
+#### v0.3.2 - 2017-03-08
+- New configuration options - whether the page number is associated with the serial number generated in the official SUMMARY
+
 #### v0.3.0 - 2017-03-06
 - According to official level is associated with a page display [#4](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/4)
 

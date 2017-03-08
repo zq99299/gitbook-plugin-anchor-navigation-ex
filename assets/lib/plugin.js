@@ -102,8 +102,10 @@ function handlerH1Toc(option, count, header, tocs, pageLevel) {
 
     if (option.isRewritePageTitle) {
         level = count.h1 + ". ";
-        if (option.themeDefault.showLevel) {
-            level = pageLevel + "." + level;
+        if (option.isAssociatedWithSummary) {
+            if (option.themeDefault.showLevel) {
+                level = pageLevel + "." + level;
+            }
         }
         rewrite = level + title;
         id = slug(rewrite);
@@ -139,8 +141,10 @@ function handlerH2Toc(option, count, header, tocs, pageLevel) {
     count.h3 = 0;
     if (option.isRewritePageTitle) {
         level = (count.h1 + '.' + count.h2 + ". ");
-        if (option.themeDefault.showLevel) {
-            level = pageLevel + "." + level;
+        if (option.isAssociatedWithSummary) {
+            if (option.themeDefault.showLevel) {
+                level = pageLevel + "." + level;
+            }
         }
         rewrite = level + title;
         id = slug(rewrite);
@@ -181,8 +185,10 @@ function handlerH3Toc(option, count, header, tocs, pageLevel) {
     count.h3 = count.h3 + 1;
     if (option.isRewritePageTitle) {
         level = (count.h1 + "." + count.h2 + "." + count.h3 + ". ");
-        if (option.themeDefault.showLevel) {
-            level = pageLevel + "." + level;
+        if (option.isAssociatedWithSummary) {
+            if (option.themeDefault.showLevel) {
+                level = pageLevel + "." + level;
+            }
         }
         rewrite = level + title;
         id = slug(rewrite);
@@ -254,7 +260,8 @@ function start(bookIns, page) {
         tocLevel3Icon: "fa fa-hand-o-right",
         themeDefault: {
             showLevel: false
-        }
+        },
+        isAssociatedWithSummary: true //层级显示是否与官网生成的层级序号相关联
     }
     /**
      * [configOption: config option]

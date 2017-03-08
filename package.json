@@ -1,9 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "0.3.0",
-  "engines": {
-    "gitbook": ">=3.0.0"
-  },
+  "version": "0.3.2",
   "description": "Automatic extraction page h1 - h3 title, added to the page as the side navigation, and automatically add anchor effect, subject to follow the official style",
   "main": "index.js",
   "scripts": {
@@ -30,7 +27,7 @@
     "github-slugid": "1.0.1"
   },
   "engines": {
-    "gitbook": "*"
+    "gitbook": ">=3.0.0"
   },
   "gitbook": {
     "properties": {

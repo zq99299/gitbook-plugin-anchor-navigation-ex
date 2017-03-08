@@ -83,7 +83,8 @@ $ gitbook install ./
 			"isShowTocTitleIcon":true,
             "tocLevel1Icon":"fa fa-hand-o-right",
             "tocLevel2Icon":"fa fa-hand-o-right",
-            "tocLevel3Icon":"fa fa-hand-o-right"
+            "tocLevel3Icon":"fa fa-hand-o-right",
+            "isAssociatedWithSummary":true
 		}	   
   }	
 }
@@ -109,6 +110,8 @@ $ gitbook install ./
 悬浮导航TOC标题前的H2图标样式. 默认为空；示例：比如：fa fa-address-book
 - **tocLevel3Icon :** 
 悬浮导航TOC标题前的H3图标样式. 默认为空；示例：比如：fa fa-address-book
+- **isAssociatedWithSummary:**
+页面序号是否与官方SUMMARY中生成的序号相关联. 默认=true
 
 #### 关于标题重写 与 主题默认 层级 显示的关系 V0.3.+
 如果你的配置是这样的：
@@ -169,6 +172,9 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 
 ### Update record
+#### v0.3.2 - 2017-03-08
+- 新增配置选项-页面序号是否与官方SUMMARY中生成的序号相关联
+
 #### v0.3.0 - 2017-03-06
 - 官方层级显示功能 与  每页 相关联显示功能[#4](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/4)
 
