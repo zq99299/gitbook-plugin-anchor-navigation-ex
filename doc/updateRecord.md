@@ -1,0 +1,62 @@
+# Update record
+## v1.0.0 - 2017-03-09
+- [#7](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/7)
+- [#8](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/8)
+- [#9](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/9)
+- [#10](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/10)
+- [#11](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/11)
+- [#12](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/12)
+- [#13](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/13)
+- [#14](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/14)
+
+## v0.3.2 - 2017-03-08
+- 新增配置选项-页面序号是否与官方SUMMARY中生成的序号相关联
+
+## v0.3.0 - 2017-03-06
+- 官方层级显示功能 与  每页 相关联显示功能[#4](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/4)
+
+
+## v0.2.7 - 2017-03-01
+- fix bug: 锚链接索引唯一 [#6](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/6)
+
+## v0.2.6 - 2017-03-01
+- fix bug: [#5](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/5)
+
+## v0.2.5 - 2017-02-17
+
+1. 进一步优化悬浮导航的样式，和官方默认主题保持一致，更加美观，和格调统一
+2. 增加 悬浮导航toc标题前的图标定制 [#2](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/issues/2)
+
+## v0.1.9 - 2017-02-17
+优化悬浮导航的样式
+
+1. 将阴影缩小，面板背景略微透明
+2. 文字显示为 14 px
+3. 标题编号 加粗显示
+4. 适配 官方默认3套主题样式。导航样式将随着皮肤主题的样式变换而变换
+
+## v0.1.8 - 2017-02-09
+* 更换锚点图标显示，更换为css样式。不然 pdf生成的时候会失败
+
+## v0.1.7 - 2017-02-09
+* css 命名重构
+* 更换锚点图标显示，更换为github一致的svg图标
+* 生成的目录增加到页面顶端，在某些情况下，会在页面底部来一个导航。很不美观，如：
+  - 在gitbook首页的时候因为不会加载插件的css效果
+  - 在生成pdf的时候，css没法被加载
+
+## 2017-02-08
+* 重构项目结构
+
+## 2017-02-07
+* 在源码中使用了 let 等es6的语法，在本地使用ok，在gitbook上报错：PluginError: Error with plugin "anchor-navigation-ex": Block-scoped declarations (let, const, function, class) not yet supported outside strict mode。不知道是为何，还是改成 var 来声明吧
+
+## 2017-02-06
+* 完全重写代码
+* 合并锚点和悬浮导航效果，现在只需要引入一个插件了 gitbook-plugin-anchor-navigation-ex
+
+## 2017-01-18
+* 页面没有h[1-3] 标签生成失败
+
+## 2017-01-22
+* 2017-01-18 提交的有问题。重新修复

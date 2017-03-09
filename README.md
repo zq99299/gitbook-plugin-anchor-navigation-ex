@@ -5,6 +5,7 @@
 
 
 ===============	【DOC：中文，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/README_EN.md) 】================
+===============	【UpdateRecord：[中文](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/updateRecord.md)，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/README_EN.md) 】================
 
 
 
@@ -59,3 +60,4 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 
 1. https://github.com/zhangzq/gitbook-plugin-navigator
 2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
+
