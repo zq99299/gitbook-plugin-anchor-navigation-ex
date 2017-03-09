@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "description": "Automatic extraction page h1 - h3 title, added to the page as the side navigation, and automatically add anchor effect, subject to follow the official style",
   "main": "index.js",
   "scripts": {
@@ -24,42 +24,48 @@
   "homepage": "https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex#readme",
   "dependencies": {
     "cheerio": "*",
-    "github-slugid": "1.0.1"
+    "github-slugid": "1.0.1",
+    "colors": "^1.1.2"
   },
   "engines": {
     "gitbook": ">=3.0.0"
   },
   "gitbook": {
     "properties": {
-      "isRewritePageTitle": {
+      "showLevel": {
         "type": "boolean",
         "default": true,
-        "title": "isRewritePageTitle"
+        "title": "Show title level"
       },
-      "isShowTocTitleIcon": {
-        "type": "boolean",
-        "default": false,
-        "title": "isShowTocTitleIcon"
-      },
-      "tocLevel1Icon": {
-        "type": "string",
-        "default": "",
-        "title": "tocLevel1Icon"
-      },
-      "tocLevel2Icon": {
-        "type": "string",
-        "default": "",
-        "title": "tocLevel2Icon"
-      },
-      "tocLevel3Icon": {
-        "type": "string",
-        "default": "",
-        "title": "tocLevel3Icon"
-      },
-      "isAssociatedWithSummary":{
+      "associatedWithSummary": {
         "type": "boolean",
         "default": true,
-        "title": "isAssociatedWithSummary"
+        "title": "associatedWithSummary"
+      },
+      "mode": {
+        "type": "string",
+        "default": "float",
+        "title": "Navigation mode"
+      },
+      "float": {
+        "type": "object",
+        "default": {
+          "showLevelIcon": false,
+          "level1Icon": "",
+          "level2Icon": "",
+          "level3Icon": ""
+        },
+        "title": "float navigation"
+      },
+      "pageTop": {
+        "type": "object",
+        "default": {
+          "showLevelIcon": false,
+          "level1Icon": "",
+          "level2Icon": "",
+          "level3Icon": ""
+        },
+        "title": "pageTop navigation"
       }
     }
   }
