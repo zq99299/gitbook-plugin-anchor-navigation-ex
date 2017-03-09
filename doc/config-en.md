@@ -1,5 +1,5 @@
-# 插件功能定制，参数详解
-本插件支持以下参数的配置：
+# plug-in custom functions, parameters, rounding
+Configuration of this plug-in supports the following parameters:
 ```json
 {
     showLevel: true,
@@ -21,7 +21,7 @@
 ```
 
 ## showLevel : TYPE:boolean。
-    标题是否显示层级序号.页面标题和导航中的标题都会加上层级显示。
+    Whether the title display hierarchy serial number. The page title and title in the navigation will add level display.
 
 ```
 ---- xx.md ---
@@ -29,15 +29,15 @@
 ## h2
 ### h3
 
-显示层级后的页面效果如下：
+Page effect of the display hierarchy is as follows：
 1. h1
 1.1. h2
 1.1.1 h3
 ```
 ## associatedWithSummary : TYPE:boolean
-    页面内的序号是否与 summary.md 中官方默认主题生成的序号相关联。
+   The serial number of the page within the summary.md. The md official default theme generated serial number associated with it.
 ```
-如果你打开了官网默认主题中的层级显示：
+If you open the level display in the default theme website:
  "pluginsConfig": {
         "anchor-navigation-ex": {
            "associatedWithSummary":true
@@ -46,7 +46,7 @@
             "showLevel": true
         }
  }
- 那么这样写：
+ So write like this:
 
  ----- SUMMARY.md ------
  # Summary
@@ -67,18 +67,18 @@
 
  ...
 ```
-那么最终效果如下：
+So the result is as follows:
   ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/层级关联显示.png)
 
 ## mode
-导航模式：分为三种
+There are three kinds of navigation mode:
 
-1. float ：浮动导航
-2. pageTop ：页面内部顶部导航
-3. '' : 不显示导航
+1. float ：floating navigation
+2. pageTop ： internal at the top of the page navigation
+3. '' : don't show navigation
 
 ## float
-mode = float的时候以下配置生效
+mode = float The following configuration to take effect
 ```
     float: { //浮动导航设置
         showLevelIcon: false,  //是否显示层级图标
@@ -87,10 +87,10 @@ mode = float的时候以下配置生效
         level3Icon: "fa fa-hand-o-right"
     }
 ```
-图标使用官网默认主题引入的css `http://fontawesome.dashgame.com/`
+Icon to use the default theme website to introduce the CSS `http://fontawesome.dashgame.com/`
 
 ## pageTop
-mode = pageTop的时候以下配置生效
+mode = pageTop The following configuration to take effect
 ```
 pageTop: {
            showLevelIcon: false,

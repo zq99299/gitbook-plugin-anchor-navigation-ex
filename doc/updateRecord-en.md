@@ -1,0 +1,60 @@
+# Update record
+## v1.0.0 - 2017-03-09
+- [#7](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/7)
+- [#8](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/8)
+- [#9](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/9)
+- [#10](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/10)
+- [#11](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/11)
+- [#12](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/12)
+- [#13](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/13)
+- [#14](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/14)
+
+#### v0.3.2 - 2017-03-08
+- New configuration options - whether the page number is associated with the serial number generated in the official SUMMARY
+
+#### v0.3.0 - 2017-03-06
+- According to official level is associated with a page display [#4](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/4)
+
+#### v0.2.7 - 2017-03-01
+- fix bug: Anchor link index unique [#6](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/6)
+
+#### v0.2.6 - 2017-03-01
+- fix bug: [#5](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/5)
+
+#### v0.2.5 - 2017-02-17
+* to further optimize the suspension navigation style, and the official theme of the default to maintain the same, more beautiful, and unified style
+* increase the suspension navigation TOC icon icon before the custom
+
+#### v0.1.9 - 2017-02-17
+Optimized navigation style
+
+* reduce the shadow, slightly transparent panel background
+* text display is 14 PX
+* title number in bold
+* adapt to the official default theme of the 3 sets. The navigation style will change with the style of the theme of the skin
+
+#### v0.1.8 - 2017-02-09
+* change the anchor icon display, the replacement for the CSS style. Otherwise, the PDF will fail to generate
+
+#### v0.1.7 - 2017-02-09
+* CSS named refactoring
+* change the anchor icon display, the replacement for the GitHub consistent SVG Icon
+* the generated directory is added to the top of the page and, in some cases, a navigation at the bottom of the page. Very unsightly, such as:
+When the gitbook home page because it will not load the plug-in CSS effect
+- CSS cannot be loaded while generating pdf
+
+#### 2017-02-08
+* rebuild project structure
+
+#### 2017-02-07
+* in the source code using the let and ES6 syntax, the use of OK in local, reported in gitbook: PluginError: Error with plugin "anchor-navigation-ex": Block-scoped declarations (let, const, function, class) not yet supported outside strict mode. Do not know why, or to VaR to declare it
+
+#### 2017-02-06
+* completely rewriting code
+* with anchor and suspended navigation effect, now only need to introduce a plug-in gitbook-plugin-anchor-navigation-ex
+
+#### 2017-01-18
+* page without h[1-3] tag generation failed
+
+#### 2017-01-22
+* 2017-01-18 submitted a problem. Re repair

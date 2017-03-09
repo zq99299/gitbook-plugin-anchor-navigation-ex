@@ -4,7 +4,7 @@
 
 
 
-===============	【DOC：中文，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/README_EN.md) 】================
+===============	【DOC：[中文](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/README.md)，English 】================
 
 ===============	【UpdateRecord：[中文](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/updateRecord.md)，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/updateRecord-en.md)】================
 
@@ -12,24 +12,24 @@
 
 -----
 
-:exclamation: 插件配置不兼容V1.x 以下版本
+:exclamation: The plug-in configuration incompatible V1. X version below
+:kissing_heart: My English is not good, this document is through the machine translation, if you don't understand, please read the document in Chinese, the translation itself
 
-# 插件功能
-- [x] 给页面H1-H6标题增加锚点效果
-- [x] 浮动导航模式
-- [x] 页面内顶部导航模式
-- [x] 导航标题前的层级图标是否显示，自定义H1-H3的层级图标
-- [x] plugins["theme-default"],页面标题层级与官方默认主题的`showLevel`层级关联
-- [x] plugins["theme-default"],插件样式支持官网默认主题的三种样式：White、Sepia、Night
+# plug-in function
+- [x] H1 - H6  to page title increase anchor effect
+- [x] floating navigation mode
+- [x] page at the top of the navigation mode
+- [x] navigation title before the hierarchy of the icon is displayed, the custom of H1, H3 level icon
+- [x] plugins["theme-default"],The page title level with the default theme official ` showLevel ` hierarchy correlation
+- [x] plugins["theme-default"],Plug-in style website three kinds of style of the default theme：White、Sepia、Night
 
-# 插件效果
-* 风格：极简
-* [点击查看效果图](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/effectScreenshot.md)
+# plug-in effect
+* style: a minimalist
+* [Click to view rendering](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/effectScreenshot.md)
 
 
-# 怎么使用插件？
-
-在你的 `book.json` 中增加插件：
+# how to use the plugin?
+In your ` book. Json ` add plugins:
 
 ```
 {
@@ -38,16 +38,16 @@
   ]
 }
 ```
-然后安装插件:
+Then install the plugin:
 
 ```
 $ gitbook install ./
 ```
 
-就可以使用了，插件详细配置，[请点击这里查看](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/config.md)
+Can use the plug-in configuration in detail, [please click here to view](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/config-en.md)
 
 
-或则单独安装插件
+Or a separate plugin is installed
 
 ```
 $ npm install gitbook-plugin-anchor-navigation-ex --save
@@ -56,8 +56,8 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
 
-# 致敬
-本插件集合以下插件的功能，并重写。
+# salute
+This sets the following plugin functions, and rewrite.
 
 1. https://github.com/zhangzq/gitbook-plugin-navigator
 2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
