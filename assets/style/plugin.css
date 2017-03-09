@@ -1,3 +1,4 @@
+/** 浮动导航 */
 #anchor-navigation-ex-navbar {
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .07);
@@ -53,7 +54,6 @@
 }
 
 /*对应官网皮肤主题颜色*/
-
 .book.color-theme-1 #anchor-navigation-ex-navbar {
     background-color: #111111;
     border-color: #7e888b;
@@ -74,6 +74,7 @@
     color: #c1c6d7;
 }
 
+/* 返回顶部 */
 #anchorNavigationExGoTop {
     position: fixed;
     right: 50px;
@@ -90,7 +91,6 @@
     padding: 5px 10px;
     color: #364149;
 }
-
 /*对应官网皮肤主题颜色*/
 .book.color-theme-1 #anchorNavigationExGoTop {
     background-color: #111111;
@@ -135,6 +135,70 @@ h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, 
 .book .book-body .page-wrapper .page-inner section.normal {
     overflow: visible;
 }
+
+/* 页面内顶部固定导航  */
+#anchor-navigation-ex-pagetop-navbar{
+    border: 1px solid rgba(0, 0, 0, .07);
+    border-radius: 1px;
+    background-clip: padding-box;
+    padding: 5px 10px;
+    background-color: #fafafa;
+    font-size: 12px;
+}
+
+#anchor-navigation-ex-pagetop-navbar ul {
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+#anchor-navigation-ex-pagetop-navbar:hover ul {
+    display: block;
+}
+
+#anchor-navigation-ex-pagetop-navbar ul li a {
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 14px;
+    color: #364149;
+    background: 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+#anchor-navigation-ex-pagetop-navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+#anchor-navigation-ex-pagetop-navbar ul li .title-icon {
+    padding-right: 4px;
+}
+
+/*对应官网皮肤主题颜色*/
+.book.color-theme-1 #anchor-navigation-ex-pagetop-navbar {
+    background-color: #111111;
+    border-color: #7e888b;
+    color: #afa790;
+}
+
+.book.color-theme-1 #anchor-navigation-ex-pagetop-navbar ul li a {
+    color: #877f6a;
+}
+
+.book.color-theme-2 #anchor-navigation-ex-pagetop-navbar {
+    background-color: #2d3143;
+    border-color: #272a3a;
+    color: #bcc1d2;
+}
+
+.book.color-theme-2 #anchor-navigation-ex-pagetop-navbar ul li a {
+    color: #c1c6d7;
+}
+
+
 
 
 
