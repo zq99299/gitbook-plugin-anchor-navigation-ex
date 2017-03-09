@@ -13,6 +13,7 @@
 -----
 
 :exclamation: The plug-in configuration incompatible V1. X version below
+
 :kissing_heart: My English is not good, this document is through the machine translation, if you don't understand, please read the document in Chinese, the translation itself
 
 # plug-in function
