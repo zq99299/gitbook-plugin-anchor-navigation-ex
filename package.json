@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "1.0.0",
-  "description": "Automatic extraction page h1 - h3 title, added to the page as the side navigation, and automatically add anchor effect, subject to follow the official style",
+  "version": "1.0.1",
+  "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
