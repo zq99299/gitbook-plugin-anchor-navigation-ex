@@ -4,7 +4,7 @@
 
 
 
-=====================	【DOC：中文，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/README_EN.md) 】======================
+==================	【DOC：中文，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/README_EN.md) 】===================
 
 
 
