@@ -1,4 +1,8 @@
 # Update record
+## v1.0.2 - 2017-05-15
+- [#17](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/17)在页面中增加`<extoc></extoc>`标签，会在此处生成TOC目录(该目录暂时与mode: "pageTop"模式生成的一致)
+ 
+
 ## v1.0.0 - 2017-03-09
 - [#7](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/7)
 - [#8](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/8)

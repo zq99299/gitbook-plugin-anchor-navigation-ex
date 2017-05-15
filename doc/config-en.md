@@ -99,3 +99,6 @@ pageTop: {
            level3Icon: "fa fa-hand-o-right"
        }
 ```
+
+# additional support function
+Adding `<extoc></extoc>` tags to a page generates the TOC directory here.

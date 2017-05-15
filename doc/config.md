@@ -19,7 +19,6 @@
     }
 }
 ```
-
 ## showLevel : TYPE:boolean。
     标题是否显示层级序号.页面标题和导航中的标题都会加上层级显示。
 
@@ -99,3 +98,7 @@ pageTop: {
            level3Icon: "fa fa-hand-o-right"
        }
 ```
+
+# 额外功能支持
+
+在页面中增加`<extoc></extoc>`标签，会在此处生成TOC目录。

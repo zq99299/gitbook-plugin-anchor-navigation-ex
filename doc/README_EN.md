@@ -23,6 +23,7 @@
 - [x] navigation title before the hierarchy of the icon is displayed, the custom of H1, H3 level icon
 - [x] plugins["theme-default"],The page title level with the default theme official ` showLevel ` hierarchy correlation
 - [x] plugins["theme-default"],Plug-in style website three kinds of style of the default theme：White、Sepia、Night
+- [x] Adding `<extoc></extoc>` tags to a page generates the TOC directory here
 
 # plug-in effect
 * style: a minimalist

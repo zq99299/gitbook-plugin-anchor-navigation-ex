@@ -21,6 +21,7 @@
 - [x] 导航标题前的层级图标是否显示，自定义H1-H3的层级图标
 - [x] plugins["theme-default"],页面标题层级与官方默认主题的`showLevel`层级关联
 - [x] plugins["theme-default"],插件样式支持官网默认主题的三种样式：White、Sepia、Night
+- [x] 在页面中增加`<extoc></extoc>`标签，会在此处生成TOC目录 
 
 # 插件效果
 * 风格：极简

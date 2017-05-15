@@ -1,4 +1,7 @@
 # Update record
+## v1.0.2 - 2017-05-15
+- [#17](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/17)Adding an `<extoc></extoc>` tag to the page generates the TOC directory here (which is consistent with the mode: pageTop pattern for the moment)
+ 
 ## v1.0.0 - 2017-03-09
 - [#7](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/7)
 - [#8](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/8)

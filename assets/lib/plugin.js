@@ -237,6 +237,12 @@ function handlerFloatNavbar($, tocs, page) {
 }
 
 function handlerPageTopNavbar($, tocs, page) {
+    var html = buildTopNavbar($, tocs, page);
+    html += "<a href='#" + tocs[0].url + "' id='anchorNavigationExGoTop'><i class='fa fa-arrow-up'></i></a>";
+    page.content = html + $.html();
+}
+
+function buildTopNavbar($, tocs, page) {
     var config = Config.config;
     var pageTop = config.pageTop;
     var level1Icon = '';
@@ -272,7 +278,7 @@ function handlerPageTopNavbar($, tocs, page) {
 
     html += "</ul></div>";
 
-    page.content = html + $.html();
+    return html;
 }
 
 function start(bookIns, page) {
@@ -292,6 +298,10 @@ function start(bookIns, page) {
     } else if (mode = 'pageTop') {
         handlerPageTopNavbar($, tocs, page);
     }
+
+    var $x = cheerio.load(page.content);
+    $x('extoc').replaceWith($x(getToc($, tocs, page)));
+    page.content = $x.html();
 }
 
 module.exports = start;
