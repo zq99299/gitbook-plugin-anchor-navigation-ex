@@ -300,7 +300,7 @@ function start(bookIns, page) {
     }
 
     var $x = cheerio.load(page.content);
-    $x('extoc').replaceWith($x(getToc($, tocs, page)));
+    $x('extoc').replaceWith($x(buildTopNavbar($, tocs, page)));
     page.content = $x.html();
 }
 
