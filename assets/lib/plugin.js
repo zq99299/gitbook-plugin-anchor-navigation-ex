@@ -17,13 +17,13 @@ function handlerTocs($, page) {
         h1: 0,
         h2: 0,
         h3: 0
-    }
+    };
+    var hashmap = {};
     var h1 = 0, h2 = 0, h3 = 0;
     $(':header').each(function (i, elem) {
         var header = $(elem);
-        var id = addId(header);
+        var id = addId(header, hashmap);
 
-        // console.log('header = ' + header);
         if (id) {
             switch (elem.tagName) {
                 case "h1":
@@ -36,7 +36,7 @@ function handlerTocs($, page) {
                     handlerH3Toc(config, count, header, tocs, page.level);
                     break;
                 default:
-                    titleAddAnchor(config, header, id, header.text());
+                    titleAddAnchor(header, id);
                     break;
             }
         }
@@ -47,26 +47,27 @@ function handlerTocs($, page) {
 /**
  * 处理锚点
  * @param header
- * @returns {*}
+ * @param hashmap id字典记录
+ * @returns {string}
  */
-function addId(header) {
-    var id = header.attr('id');
-    if (!id) {
-        id = slug(header.text());
-        header.attr("id", id);
+function addId(header, hashmap) {
+    var id = header.attr('id') || slug(header.text());
+    var n = hashmap[id] || 0;
+    hashmap[id] = n + 1;
+    if (n) {//此标题已经存在
+        id = id + '__' + n;
+        hashmap[id] = 1;
     }
+    header.attr("id", id);
     return id;
 }
 
 /**
  * 标题增加锚点效果
- * @param option
+ * @param header
  * @param id
- * @param title
  */
-function titleAddAnchor(config, header, id, title) {
-    header.text(title);
-    header.attr('id', id);
+function titleAddAnchor(header, id) {
     header.prepend('<a name="' + id + '" class="anchor-navigation-ex-anchor" '
         + 'href="#' + id + '">'
         + '<i class="fa fa-link" aria-hidden="true"></i>'
@@ -83,24 +84,20 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
     var level = ''; //层级
-    var rewrite = title; //重写后的标题，用于页面直接替换
-
-    count.h1 = count.h1 + 1;
-    count.h2 = 0;
-    count.h3 = 0;
 
     if (config.showLevel) {
+        //层级显示仅在需要的时候处理 
+        count.h1 += 1;
+        count.h2 = 0;
+        count.h3 = 0;
         level = count.h1 + '. ';
         // 是否与官网默认主题层级序号相关联
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + '.' + level;
         }
-        rewrite = level + title;
-        id = slug(rewrite);
-    } else {
-        id = count.h1 + '-' + id
+        header.text(level + title); //重写标题
     }
-    titleAddAnchor(config, header, id, rewrite);
+    titleAddAnchor(header, id);
     tocs.push({
         name: title,
         level: level,
@@ -117,29 +114,24 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
     var level = ''; //层级
-    var rewrite = title; //重写后的标题，用于页面直接替换
 
     if (tocs.length <= 0) {
-        titleAddAnchor(config, header, id, title);
+        titleAddAnchor(header, id);
         return;
     }
-
-    count.h2 = count.h2 + 1;
-    count.h3 = 0;
 
     var h1Index = tocs.length - 1;
     var h1Toc = tocs[h1Index];
     if (config.showLevel) {
+        count.h2 += 1;
+        count.h3 = 0;
         level = (count.h1 + '.' + count.h2 + '. ');
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + '.' + level;
         }
-        rewrite = level + title;
-        id = slug(rewrite);
-    } else {
-        id = count.h1 + '' + count.h2 + '-' + id;
+        header.text(level + title); //重写标题
     }
-    titleAddAnchor(config, header, id, rewrite);
+    titleAddAnchor(header, id);
     h1Toc.children.push({
         name: title,
         level: level,
@@ -156,33 +148,29 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
     var level = ''; //层级
-    var rewrite = title; //重写后的标题，用于页面直接替换
 
     if (tocs.length <= 0) {
-        titleAddAnchor(config, header, id, title);
+        titleAddAnchor(header, id);
         return;
     }
     var h1Index = tocs.length - 1;
     var h1Toc = tocs[h1Index];
     var h2Tocs = h1Toc.children;
     if (h2Tocs.length <= 0) {
-        titleAddAnchor(config, header, id, title);
+        titleAddAnchor(header, id);
         return;
     }
     var h2Toc = h1Toc.children[h2Tocs.length - 1];
-    count.h3 = count.h3 + 1;
 
     if (config.showLevel) {
+        count.h3 += 1;
         level = (count.h1 + '.' + count.h2 + '.' + count.h3 + '. ');
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + "." + level;
         }
-        rewrite = level + title;
-        id = slug(rewrite);
-    } else {
-        id = count.h1 + '' + count.h2 + count.h3 + '-' + id;
+        header.text(level + title); //重写标题
     }
-    titleAddAnchor(config, header, id, rewrite);
+    titleAddAnchor(header, id);
     h2Toc.children.push({
         name: title,
         level: level,
