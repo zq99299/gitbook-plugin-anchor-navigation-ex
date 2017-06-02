@@ -101,4 +101,7 @@ pageTop: {
 ```
 
 # additional support function
-Adding `<extoc></extoc>` tags to a page generates the TOC directory here.
+- Adding `<extoc></extoc>` tags to a page generates the TOC directory here.
+- in the page to add `<! - ex_nonav ->` logo, will make this page does not generate suspended navigation
+    
+     In the home page, the introduction page and other places can use this function, can block some code, because these places can not load css

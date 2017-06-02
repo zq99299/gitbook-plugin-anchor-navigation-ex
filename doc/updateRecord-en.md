@@ -1,6 +1,6 @@
 # Update record
 ## v1.0.4 - 2017-06-02
-[#19](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/19)This update is mainly to fix the title after the repeated strategy, and fix the previous version only dealt with the h1-h3 title duplicate bug
+This update is mainly to fix the title after the repeated strategy, and fix the previous version only dealt with the h1-h3 title duplicate bug[#19](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/19)
 - Modify
      - Modify ID generation method
      - simplify the Toc function, optimize the code to speed up the running speed
@@ -8,8 +8,9 @@
      - Priority use of title content as ID
      - Keep custom ID [#18](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/18)
          - repeat ID auto-increment suffix [#6](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/6)
+- Use the `<! - ex_nonav ->` annotation to let the page do not display navigation [#15](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/15)
 ## v1.0.2 - 2017-05-15
-- [#17](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/17)Adding an `<extoc></extoc>` tag to the page generates the TOC directory here (which is consistent with the mode: pageTop pattern for the moment)
+- Adding an `<extoc></extoc>` tag to the page generates the TOC directory here (which is consistent with the mode: pageTop pattern for the moment)[#17](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/17)
  
 ## v1.0.0 - 2017-03-09
 - [#7](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/7)
