@@ -279,12 +279,14 @@ function start(bookIns, page) {
         page.content = $.html();
         return;
     }
-    var config = Config.config;
-    var mode = config.mode;
-    if (mode == 'float') {
-        handlerFloatNavbar($, tocs, page);
-    } else if (mode = 'pageTop') {
-        handlerPageTopNavbar($, tocs, page);
+    if(!/<!--[ \t]*ex_nonav[ \t]*-->/.test(page.content)){
+        var config = Config.config;
+        var mode = config.mode;
+        if (mode == 'float') {
+            handlerFloatNavbar($, tocs, page);
+        } else if (mode = 'pageTop') {
+            handlerPageTopNavbar($, tocs, page);
+        }
     }
 
     var $x = cheerio.load(page.content);
