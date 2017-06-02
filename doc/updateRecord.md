@@ -1,4 +1,16 @@
 # Update record
+## v1.0.4 - 2017-06-02
+[#19](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/19)此更新主要是修复标题重复后的策略，和修复上一个版本只处理了h1-h3标题重复的bug
+- 修改
+    - 修改ID生成方式
+    - 简化Toc函数，优化代码加快运行速度
+- 记过
+    - 优先使用标题内容作为ID
+    - 保留自定义ID [#18](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/18)
+    - 重复ID自动递增后缀 [#6](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/6)
+
+其他代码性能稍微优化
+
 ## v1.0.2 - 2017-05-15
 - [#17](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/17)在页面中增加`<extoc></extoc>`标签，会在此处生成TOC目录(该目录暂时与mode: "pageTop"模式生成的一致)
  
