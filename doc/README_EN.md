@@ -24,6 +24,7 @@
 - [x] plugins["theme-default"],The page title level with the default theme official ` showLevel ` hierarchy correlation
 - [x] plugins["theme-default"],Plug-in style website three kinds of style of the default theme：White、Sepia、Night
 - [x] Adding `<extoc></extoc>` tags to a page generates the TOC directory here
+- [x] Add the `<! - ex_nonav ->` tag to the page without generating a floating navigation on that page
 
 # plug-in effect
 * style: a minimalist
