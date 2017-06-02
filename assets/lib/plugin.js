@@ -270,12 +270,16 @@ function buildTopNavbar($, tocs, page) {
 }
 
 function start(bookIns, page) {
+    // 是否存在关闭toc命令
+    if (page.notoc || /<!--[ \t]*notoc[ \t]*-->/.test(page.content)) {
+        return;
+    }
+
     var $ = cheerio.load(page.content);
     // 处理toc相关，同时处理标题和id
     var tocs = handlerTocs($, page);
-
-    // 设置处理之后的内容
-    if (tocs.length == 0) {
+    // 少于或等于1个标题的不生成目录
+    if ($('h1,h2,h3').length <= 1) {
         page.content = $.html();
         return;
     }
