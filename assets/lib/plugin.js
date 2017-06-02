@@ -18,11 +18,11 @@ function handlerTocs($, page) {
         h2: 0,
         h3: 0
     };
-    var hashmap = {};
+    var titleCountMap = {}; // 用来记录标题出现的次数
     var h1 = 0, h2 = 0, h3 = 0;
     $(':header').each(function (i, elem) {
         var header = $(elem);
-        var id = addId(header, hashmap);
+        var id = addId(header, titleCountMap);
 
         if (id) {
             switch (elem.tagName) {
@@ -47,16 +47,16 @@ function handlerTocs($, page) {
 /**
  * 处理锚点
  * @param header
- * @param hashmap id字典记录
+ * @param titleCountMap 用来记录标题出现的次数
  * @returns {string}
  */
-function addId(header, hashmap) {
+function addId(header, titleCountMap) {
     var id = header.attr('id') || slug(header.text());
-    var n = hashmap[id] || 0;
-    hashmap[id] = n + 1;
-    if (n) {//此标题已经存在
-        id = id + '__' + n;
-        hashmap[id] = 1;
+    var titleCount = titleCountMap[id] || 0;
+    console.log('id:', id, 'n:', titleCount, 'hashmap:', titleCountMap)
+    titleCountMap[id] = titleCount + 1;
+    if (titleCount) {//此标题已经存在  null/undefined/0/NaN/ 表达式时，统统被解释为false
+        id = id + '_' + titleCount;
     }
     header.attr("id", id);
     return id;
