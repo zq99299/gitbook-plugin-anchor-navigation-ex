@@ -4,7 +4,12 @@
 {
     showLevel: true,
     associatedWithSummary: true,
-    mode: "float",
+    level: {
+        h1: true,
+        h2: true,
+        h3: true
+    },
+    mode: "float",    
     float: {
         showLevelIcon: false,
         level1Icon: "fa fa-hand-o-right",

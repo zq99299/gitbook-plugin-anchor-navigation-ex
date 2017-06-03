@@ -4,6 +4,11 @@ Configuration of this plug-in supports the following parameters:
 {
     showLevel: true,
     associatedWithSummary: true,
+    level: {
+        h1: true,
+        h2: true,
+        h3: true
+    },
     mode: "float",
     float: {
         showLevelIcon: false,
