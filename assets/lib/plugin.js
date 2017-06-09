@@ -16,9 +16,7 @@ function handlerTocs($, page) {
     var count = {
         h1: 0,
         h2: 0,
-        h3: 0,
-        level1: '',//当前 H1 显示的层级
-        level2: '',//当前 H2 显示的层级
+        h3: 0
     };
     var titleCountMap = {}; // 用来记录标题出现的次数
     var h1 = 0, h2 = 0, h3 = 0;
@@ -55,6 +53,7 @@ function handlerTocs($, page) {
 function addId(header, titleCountMap) {
     var id = header.attr('id') || slug(header.text());
     var titleCount = titleCountMap[id] || 0;
+    console.log('id:', id, 'n:', titleCount, 'hashmap:', titleCountMap)
     titleCountMap[id] = titleCount + 1;
     if (titleCount) {//此标题已经存在  null/undefined/0/NaN/ 表达式时，统统被解释为false
         id = id + '_' + titleCount;
@@ -84,25 +83,24 @@ function titleAddAnchor(header, id) {
 function handlerH1Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
+    var level = ''; //层级
 
-    count.h2 = 0;
-    count.h3 = 0;
-
-    if (config.showLevel && config.level.h1) {
-        count.h1 += 1;
+    if (config.showLevel) {
         //层级显示仅在需要的时候处理 
+        count.h1 += 1;
+        count.h2 = 0;
+        count.h3 = 0;
+        level = count.h1 + '. ';
         // 是否与官网默认主题层级序号相关联
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
-            count.level1 = pageLevel + '.' + count.h1 + '. ';
-        } else {
-            count.level1 = count.h1 + '. ';
+            level = pageLevel + '.' + level;
         }
-        header.text(count.level1 + title); //重写标题
+        header.text(level + title); //重写标题
     }
     titleAddAnchor(header, id);
     tocs.push({
         name: title,
-        level: count.level1,
+        level: level,
         url: id,
         children: []
     });
@@ -115,6 +113,7 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
 function handlerH2Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
+    var level = ''; //层级
 
     if (tocs.length <= 0) {
         titleAddAnchor(header, id);
@@ -123,16 +122,19 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
 
     var h1Index = tocs.length - 1;
     var h1Toc = tocs[h1Index];
-    count.h3 = 0;
-    if (config.showLevel && config.level.h2) {
+    if (config.showLevel) {
         count.h2 += 1;
-        count.level2 = count.level1.trim() + count.h2 + '. ';
-        header.text(count.level2 + title); //重写标题
+        count.h3 = 0;
+        level = (count.h1 + '.' + count.h2 + '. ');
+        if (config.associatedWithSummary && config.themeDefault.showLevel) {
+            level = pageLevel + '.' + level;
+        }
+        header.text(level + title); //重写标题
     }
     titleAddAnchor(header, id);
     h1Toc.children.push({
         name: title,
-        level: count.level2,
+        level: level,
         url: id,
         children: []
     });
@@ -160,9 +162,12 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
     }
     var h2Toc = h1Toc.children[h2Tocs.length - 1];
 
-    if (config.showLevel && config.level.h3) {
+    if (config.showLevel) {
         count.h3 += 1;
-        level = count.level2.trim() + count.h3 + '. ';
+        level = (count.h1 + '.' + count.h2 + '.' + count.h3 + '. ');
+        if (config.associatedWithSummary && config.themeDefault.showLevel) {
+            level = pageLevel + "." + level;
+        }
         header.text(level + title); //重写标题
     }
     titleAddAnchor(header, id);
@@ -274,7 +279,7 @@ function start(bookIns, page) {
         page.content = $.html();
         return;
     }
-    if (!/<!--[ \t]*ex_nonav[ \t]*-->/.test(page.content)) {
+    if(!/<!--[ \t]*ex_nonav[ \t]*-->/.test(page.content)){
         var config = Config.config;
         var mode = config.mode;
         if (mode == 'float') {

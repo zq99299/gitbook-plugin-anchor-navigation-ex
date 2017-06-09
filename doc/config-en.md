@@ -2,25 +2,20 @@
 Configuration of this plug-in supports the following parameters:
 ```json
 {
-    "showLevel": true,
-    "associatedWithSummary": true,
-    "level": {
-        "h1": true,
-        "h2": true,
-        "h3": true
+    showLevel: true,
+    associatedWithSummary: true,
+    mode: "float",
+    float: {
+        showLevelIcon: false,
+        level1Icon: "fa fa-hand-o-right",
+        level2Icon: "fa fa-hand-o-right",
+        level3Icon: "fa fa-hand-o-right"
     },
-    "mode": "float",
-    "float": {
-        "showLevelIcon": false,
-        "level1Icon": "fa fa-hand-o-right",
-        "level2Icon": "fa fa-hand-o-right",
-        "level3Icon": "fa fa-hand-o-right"
-    },
-    "pageTop": {
-        "showLevelIcon": false,
-        "level1Icon": "fa fa-hand-o-right",
-        "level2Icon": "fa fa-hand-o-right",
-        "level3Icon": "fa fa-hand-o-right"
+    pageTop: {
+        showLevelIcon: false,
+        level1Icon: "fa fa-hand-o-right",
+        level2Icon: "fa fa-hand-o-right",
+        level3Icon: "fa fa-hand-o-right"
     }
 }
 ```
