@@ -5,6 +5,12 @@ const defaultConfig = {
     showLevel: true,
     // 页面内的序号是否与 summary.md 中官方默认主题生成的序号相关联
     associatedWithSummary: true,
+    //显示level 
+    "level": {
+        "h1": true,
+        "h2": true,
+        "h3": true
+    },
     // 模式：分为三种：float：浮动导航、pageTop：页面内部顶部导航、null:不显示导航
     mode: "float",
     float: { //浮动导航设置
@@ -61,7 +67,7 @@ function handlerAll(bookIns) {
 }
 /**
  * 本类中 config 单例共享
- * @type {{config: {showLevel: boolean, associatedWithSummary: boolean, mode: string, float: {showLevelIcon: boolean, level1Icon: string, level2Icon: string, level3Icon: string}, top: {showLevelIcon: boolean, level1Icon: string, level2Icon: string, level3Icon: string}, themeDefault: {showLevel: boolean}}, handler: handler, handlerAll: handlerAll}}
+ * @type {{config: {showLevel: boolean, associatedWithSummary: boolean,level: {h1: boolean,h2: boolean, h3: boolean}, mode: string, float: {showLevelIcon: boolean, level1Icon: string, level2Icon: string, level3Icon: string}, top: {showLevelIcon: boolean, level1Icon: string, level2Icon: string, level3Icon: string}, themeDefault: {showLevel: boolean}}, handler: handler, handlerAll: handlerAll}}
  */
 module.exports = {
     config: defaultConfig,
