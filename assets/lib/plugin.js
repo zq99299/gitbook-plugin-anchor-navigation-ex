@@ -53,7 +53,6 @@ function handlerTocs($, page) {
 function addId(header, titleCountMap) {
     var id = header.attr('id') || slug(header.text());
     var titleCount = titleCountMap[id] || 0;
-    console.log('id:', id, 'n:', titleCount, 'hashmap:', titleCountMap)
     titleCountMap[id] = titleCount + 1;
     if (titleCount) {//此标题已经存在  null/undefined/0/NaN/ 表达式时，统统被解释为false
         id = id + '_' + titleCount;
