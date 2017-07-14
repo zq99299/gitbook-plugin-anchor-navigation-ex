@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
   "scripts": {
@@ -46,6 +46,16 @@
         "type": "string",
         "default": "float",
         "title": "Navigation mode"
+      },
+      "printLog":{
+        "type": "boolean",
+        "default": false,
+        "title": "printLog"
+      },
+      "multipleH1":{
+        "type": "boolean",
+        "default": true,
+        "title": "multipleH1"
       },
       "float": {
         "type": "object",
