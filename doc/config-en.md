@@ -1,9 +1,11 @@
 # plug-in custom functions, parameters, rounding
-Configuration of this plug-in supports the following parameters:
+Configuration of this plug-in supports the following parameters:The configuration shown here is the default configuration
 ```json
 {
     showLevel: true,
     associatedWithSummary: true,
+    printLog: false,
+    multipleH1: true,
     mode: "float",
     float: {
         showLevelIcon: false,
@@ -69,6 +71,46 @@ If you open the level display in the default theme website:
 ```
 So the result is as follows:
   ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/层级关联显示.png)
+
+## printLog : TYPE:boolean（V1.0.6+）
+Whether to print the processing log is useful in troubleshooting the failure to generate book, and to know which file is wrong
+As shown below, other plug-ins are used, but only the error messages are printed, and which file is not known. Open this option and you'll see
+![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/printlog.png)
+
+## multipleH1 : TYPE:boolean（V1.0.6+）
+Is it a multi H1 mode? A normal book. One chapter has only one H1 tag, that is, a MD file and a label. If your books are in this normal mode, close this option, =false
+The biggest difference is as follows
+```
+---- multipleH1=true----
+# 多H1标题1
+## 子标题
+# 多H1标题2
+## 子标题
+## 子标题
+
+生成的标题如下：
+1. 多H1标题1
+1.1. 子标题
+2. 多H1标题2
+2.1. 子标题
+2.2. 子标题
+
+---- multipleH1=false----
+# 多H1标题1
+## 子标题
+# 多H1标题2
+## 子标题
+## 子标题
+
+生成的标题如下：
+多H1标题1
+1. 子标题
+多H1标题2
+1. 子标题
+2. 子标题
+
+See the difference? Normal book mode, that is, only one H1 case, the display of the sort number more in line with our needs.
+```
 
 ## mode
 There are three kinds of navigation mode:

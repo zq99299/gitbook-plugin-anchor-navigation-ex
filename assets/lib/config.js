@@ -5,6 +5,8 @@ const defaultConfig = {
     showLevel: true,
     // 页面内的序号是否与 summary.md 中官方默认主题生成的序号相关联
     associatedWithSummary: true,
+    printLog: false,  // 是否打印日志，就如同自己使用了prism，但是很容易写错他的定义，比如css写成了csss,文章太多的话，生成出错，但是找不到是那篇文章，打开该选项就能定位了
+    multipleH1: true, // 多H1模式么？一般正常的文章一个md文件只有一个H1标题，这个时候就适合关闭该选项，生成的标题不会多一个 1. 出来
     // 模式：分为三种：float：浮动导航、pageTop：页面内部顶部导航、null:不显示导航
     mode: "float",
     float: { //浮动导航设置

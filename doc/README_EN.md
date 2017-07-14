@@ -25,6 +25,8 @@
 - [x] plugins["theme-default"],Plug-in style website three kinds of style of the default theme：White、Sepia、Night
 - [x] Adding `<extoc></extoc>` tags to a page generates the TOC directory here
 - [x] Add the `<! - ex_nonav ->` tag to the page without generating a floating navigation on that page
+- [x] config.printLog=true, the current progress of the printing process, debugging is very useful
+- [x] config.multipleH1=false, remove ugly redundant 1. serial numbers (such as after your books follow a MD file with only one H1 tag)
 
 # plug-in effect
 * style: a minimalist

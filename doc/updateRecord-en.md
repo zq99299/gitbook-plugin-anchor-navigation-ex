@@ -1,4 +1,8 @@
 # Update record
+## v1.0.5 - 2017-07-14
+- New: the printLog configuration option, if it is true, compiles the printed MD file path at compile time. If the process fails, it is good to know which file it is
+- New: multipleH1 configuration options, if true, according to a MD file with multiple H1 title, false, according to a MD file only contains a H1 title, the biggest difference is to remove the ugly 1.xxx in 1.
+
 ## v1.0.4 - 2017-06-02
 This update is mainly to fix the title after the repeated strategy, and fix the previous version only dealt with the h1-h3 title duplicate bug[#19](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/19)
 - Modify

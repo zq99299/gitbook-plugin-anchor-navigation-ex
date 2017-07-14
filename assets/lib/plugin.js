@@ -90,7 +90,11 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
         count.h1 += 1;
         count.h2 = 0;
         count.h3 = 0;
-        level = count.h1 + '. ';
+        if(config.multipleH1){
+            level = count.h1 + '. ';
+        }else{
+            level = ' ';
+        }
         // 是否与官网默认主题层级序号相关联
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + '.' + level;
@@ -125,7 +129,11 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
     if (config.showLevel) {
         count.h2 += 1;
         count.h3 = 0;
-        level = (count.h1 + '.' + count.h2 + '. ');
+        if(config.multipleH1){
+            level = (count.h1 + '.' + count.h2 + '. ');
+        }else{
+            level = (count.h2 + '. ');
+        }
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + '.' + level;
         }
@@ -164,7 +172,11 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
 
     if (config.showLevel) {
         count.h3 += 1;
-        level = (count.h1 + '.' + count.h2 + '.' + count.h3 + '. ');
+        if(config.multipleH1){
+            level = (count.h1 + '.' + count.h2 + '.' + count.h3 + '. ');
+        }else{
+            level = (count.h2 + '.' + count.h3 + '. ');
+        }
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + "." + level;
         }

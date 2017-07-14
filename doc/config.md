@@ -1,9 +1,11 @@
 # 插件功能定制，参数详解
-本插件支持以下参数的配置：
+本插件支持以下参数的配置：这里展示的配置都是默认配置
 ```json
 {
     showLevel: true,
     associatedWithSummary: true,
+    printLog: false,
+    multipleH1: true,
     mode: "float",
     float: {
         showLevelIcon: false,
@@ -68,6 +70,46 @@
 ```
 那么最终效果如下：
   ![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/层级关联显示.png)
+
+## printLog : TYPE:boolean （V1.0.6+）
+是否打印处理日志,在排查生成book失败的时候很有用，能知道是哪一个文件出的错
+如下图：使用了别的插件，但是只打印了出错的信息，不知道是哪一个文件。开启该选项，就能知道了
+![image](https://raw.githubusercontent.com/zq99299/gitbook-plugin-anchor-navigation-ex/master/doc/images/printlog.png)
+
+## multipleH1 : TYPE:boolean  （V1.0.6+）
+是否是多h1模式？一般正常的书籍一个章节只有一个h1标签，也就是一个md文件一个标签。如果您的书籍是这种正常模式，请关闭该选项=false
+最大的区别如下
+```
+---- multipleH1=true----
+# 多H1标题1
+## 子标题
+# 多H1标题2
+## 子标题
+## 子标题
+
+生成的标题如下：
+1. 多H1标题1
+1.1. 子标题
+2. 多H1标题2
+2.1. 子标题
+2.2. 子标题
+
+---- multipleH1=false----
+# 多H1标题1
+## 子标题
+# 多H1标题2
+## 子标题
+## 子标题
+
+生成的标题如下：
+多H1标题1
+1. 子标题
+多H1标题2
+1. 子标题
+2. 子标题
+
+看出区别了么？正常书籍模式，也就是只有一个h1的情况下，这个展示的排序序号更符合我们的需求。
+```
 
 ## mode
 导航模式：分为三种

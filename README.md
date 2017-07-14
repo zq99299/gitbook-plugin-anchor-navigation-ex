@@ -23,6 +23,8 @@
 - [x] plugins["theme-default"],插件样式支持官网默认主题的三种样式：White、Sepia、Night
 - [x] 在页面中增加`<extoc></extoc>`标签，会在此处生成TOC目录 
 - [x] 在页面中增加`<!-- ex_nonav -->`标签，不会在该页面生成悬浮导航
+- [x] config.printLog=true,打印当前的处理进度，排错很有用
+- [x] config.multipleH1=false,去掉丑陋的多余的1. 序号（如过您的书籍遵循一个MD文件只有一个H1标签的话）
 
 # 插件效果
 * 风格：极简
