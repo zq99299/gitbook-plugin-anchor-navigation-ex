@@ -41,6 +41,8 @@ function handlerTocs($, page) {
             }
         }
     });
+    // 不然标题重写就没有效果，如果在外面不调用这句话的话
+    page.content = $.html();
     return tocs;
 }
 
