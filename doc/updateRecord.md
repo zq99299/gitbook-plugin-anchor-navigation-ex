@@ -1,4 +1,7 @@
 # Update record
+## v1.0.8 - 2017-08-03
+- fix bug: [#26](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/26) mode:"" 配置无效，还会在页面顶部生成导航
+
 ## v1.0.5 - 2017-07-14
 - 新增：printLog 配置选项，如果为true的话，则编译的时候打印当前正在处理的md文件路径，如果处理失败，也好知道是哪一个文件
 - 新增：multipleH1 配置选项，如果为true的话，将按照一个md文件有多个H1标题处理，为false的话，则按照一个md文件只包含一个h1标题处理，最大的区别就是去掉了丑陋的1.xxx 中的1.

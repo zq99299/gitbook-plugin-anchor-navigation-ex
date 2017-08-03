@@ -1,4 +1,8 @@
 # Update record
+## v1.0.8 - 2017-08-03
+- fix bug: [#26](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/26) mode:""
+The configuration is invalid and the navigation is generated at the top of the page
+
 ## v1.0.5 - 2017-07-14
 - New: the printLog configuration option, if it is true, compiles the printed MD file path at compile time. If the process fails, it is good to know which file it is
 - New: multipleH1 configuration options, if true, according to a MD file with multiple H1 title, false, according to a MD file only contains a H1 title, the biggest difference is to remove the ugly 1.xxx in 1.
