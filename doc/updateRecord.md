@@ -1,4 +1,8 @@
 # Update record
+
+## v1.0.9 - 2017-08-03
+- fix bug: [#26](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/26) 当配置mode:""时，页面标题没有重写
+
 ## v1.0.8 - 2017-08-03
 - fix bug: [#26](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/26) mode:"" 配置无效，还会在页面顶部生成导航
 

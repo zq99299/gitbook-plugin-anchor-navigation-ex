@@ -23,7 +23,7 @@ Configuration of this plug-in supports the following parameters:The configuratio
 ```
 
 ## showLevel : TYPE:boolean。
-    Whether the title display hierarchy serial number. The page title and title in the navigation will add level display.
+    Whether the title display hierarchy serial number. The page title and title in the navigation will add level display.(controls whether the title of the page is overwritten)
 
 ```
 ---- xx.md ---
