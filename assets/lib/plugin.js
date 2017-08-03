@@ -296,7 +296,7 @@ function start(bookIns, page) {
         var mode = config.mode;
         if (mode == 'float') {
             handlerFloatNavbar($, tocs, page);
-        } else if (mode = 'pageTop') {
+        } else if (mode == 'pageTop') {
             handlerPageTopNavbar($, tocs, page);
         }
     }
