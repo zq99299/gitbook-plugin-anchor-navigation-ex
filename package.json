@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
   "scripts": {
@@ -35,27 +35,27 @@
       "showLevel": {
         "type": "boolean",
         "default": true,
-        "title": "Show title level"
+        "title": "是否为标题增加锚点效果并显示序号"
       },
       "associatedWithSummary": {
         "type": "boolean",
         "default": true,
-        "title": "associatedWithSummary"
+        "title": "是否与官方默认主题summary目录生成的序号相关联"
       },
       "mode": {
         "type": "string",
         "default": "float",
-        "title": "Navigation mode"
+        "title": "导航模式"
       },
       "printLog":{
         "type": "boolean",
         "default": false,
-        "title": "printLog"
+        "title": "是否打印处理进度日志，方便排错"
       },
       "multipleH1":{
         "type": "boolean",
         "default": true,
-        "title": "multipleH1"
+        "title": "false:去掉每页开头H1标题被重写成1. xxx（如果您的md文档遵循一个md文件只有一个H1标题的话)"
       },
       "float": {
         "type": "object",
@@ -65,7 +65,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": "float navigation"
+        "title": "浮动右侧导航模式"
       },
       "pageTop": {
         "type": "object",
@@ -75,7 +75,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": "pageTop navigation"
+        "title": "页内顶部导航模式"
       }
     }
   }
