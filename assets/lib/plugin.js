@@ -92,9 +92,9 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
         count.h1 += 1;
         count.h2 = 0;
         count.h3 = 0;
-        if(config.multipleH1){
+        if (config.multipleH1) {
             level = count.h1 + '. ';
-        }else{
+        } else {
             level = ' ';
         }
         // 是否与官网默认主题层级序号相关联
@@ -111,6 +111,7 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
         children: []
     });
 }
+
 /**
  * 处理h2
  * @param count 计数器
@@ -131,9 +132,9 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
     if (config.showLevel) {
         count.h2 += 1;
         count.h3 = 0;
-        if(config.multipleH1){
+        if (config.multipleH1) {
             level = (count.h1 + '.' + count.h2 + '. ');
-        }else{
+        } else {
             level = (count.h2 + '. ');
         }
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
@@ -149,6 +150,7 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
         children: []
     });
 }
+
 /**
  * 处理h3
  * @param count 计数器
@@ -174,9 +176,9 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
 
     if (config.showLevel) {
         count.h3 += 1;
-        if(config.multipleH1){
+        if (config.multipleH1) {
             level = (count.h1 + '.' + count.h2 + '.' + count.h3 + '. ');
-        }else{
+        } else {
             level = (count.h2 + '.' + count.h3 + '. ');
         }
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
@@ -195,11 +197,10 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
 
 /**
  * 处理浮动导航：拼接锚点导航html，并添加到html末尾，利用css 悬浮
- * @param option
  * @param tocs
- * @param page
+ * @returns {string}
  */
-function handlerFloatNavbar($, tocs, page) {
+function handlerFloatNavbar($, tocs) {
     var config = Config.config;
     var float = config.float;
     var level1Icon = '';
@@ -232,25 +233,15 @@ function handlerFloatNavbar($, tocs, page) {
             html += "</ul>"
         }
     }
-    var goTopHtml = '';
-    if(config.showGoTop){
-        goTopHtml = '<a href=\'#" + tocs[0].url + "\' id=\'anchorNavigationExGoTop\'><i class=\'fa fa-arrow-up\'></i></a>';
-    }
-    html += "</ul></div>" + goTopHtml;
-
-    page.content = html + $.html();
+    html += "</ul></div>";
+    return html;
 }
 
-function handlerPageTopNavbar($, tocs, page) {
-    var config = Config.config;
-    var html = buildTopNavbar($, tocs, page);
-    if(config.showGoTop){
-        html += "<a href='#" + tocs[0].url + "' id='anchorNavigationExGoTop'><i class='fa fa-arrow-up'></i></a>";
-    }
-    page.content = html + $.html();
+function handlerPageTopNavbar($, tocs) {
+    return buildTopNavbar($, tocs)
 }
 
-function buildTopNavbar($, tocs, page) {
+function buildTopNavbar($, tocs) {
     var config = Config.config;
     var pageTop = config.pageTop;
     var level1Icon = '';
@@ -289,6 +280,20 @@ function buildTopNavbar($, tocs, page) {
     return html;
 }
 
+/**
+ * 添加返回顶部按钮
+ * @param tocs
+ * @returns {string}
+ */
+function buildGoTop(tocs) {
+    var config = Config.config;
+    var html = "";
+    if (config.showGoTop && tocs && tocs.length > 0) {
+        html = "<a href='#" + tocs[0].url + "' id='anchorNavigationExGoTop'><i class='fa fa-arrow-up'></i></a>";
+    }
+    return html;
+}
+
 function start(bookIns, page) {
     var $ = cheerio.load(page.content);
     // 处理toc相关，同时处理标题和id
@@ -299,16 +304,18 @@ function start(bookIns, page) {
         page.content = $.html();
         return;
     }
-    if(!/<!--[ \t]*ex_nonav[ \t]*-->/.test(page.content)){
+    var html = "";
+    if (!/<!--[ \t]*ex_nonav[ \t]*-->/.test(page.content)) {
         var config = Config.config;
         var mode = config.mode;
         if (mode == 'float') {
-            handlerFloatNavbar($, tocs, page);
+            html = handlerFloatNavbar($, tocs);
         } else if (mode == 'pageTop') {
-            handlerPageTopNavbar($, tocs, page);
+            html = handlerPageTopNavbar($, tocs);
         }
     }
-
+    html += buildGoTop(tocs);
+    page.content = html + $.html();
     var $x = cheerio.load(page.content);
     $x('extoc').replaceWith($x(buildTopNavbar($, tocs, page)));
     page.content = $x.html();
