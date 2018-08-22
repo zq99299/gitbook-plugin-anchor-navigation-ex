@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
   "scripts": {
@@ -46,6 +46,11 @@
         "type": "string",
         "default": "float",
         "title": "导航模式"
+      },
+      "showGoTop": {
+        "type": "boolean",
+        "default": true,
+        "title": "是否显示返回顶部按钮"
       },
       "printLog":{
         "type": "boolean",

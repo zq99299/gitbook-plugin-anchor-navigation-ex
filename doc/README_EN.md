@@ -27,6 +27,7 @@
 - [x] Add the `<! - ex_nonav ->` tag to the page without generating a floating navigation on that page
 - [x] config.printLog=true, the current progress of the printing process, debugging is very useful
 - [x] config.multipleH1=false, remove ugly redundant 1. serial numbers (such as after your books follow a MD file with only one H1 tag)
+- [x] config.showGoTop=true,Displays the back top button V1.0.11+
 
 # plug-in effect
 * style: a minimalist

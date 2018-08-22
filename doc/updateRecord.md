@@ -1,4 +1,6 @@
 # Update record
+## v 1.0.11 - 2018-08-22
+- [#33](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/33) 把返回顶部按钮独立出来了，为true的时候显示返回顶部按钮
 
 ## v1.0.9 - 2017-08-03
 - fix bug: [#26](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/26) 当配置mode:""时，页面标题没有重写

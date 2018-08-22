@@ -2,22 +2,23 @@
 Configuration of this plug-in supports the following parameters:The configuration shown here is the default configuration
 ```json
 {
-    showLevel: true,
-    associatedWithSummary: true,
-    printLog: false,
-    multipleH1: true,
-    mode: "float",
-    float: {
-        showLevelIcon: false,
-        level1Icon: "fa fa-hand-o-right",
-        level2Icon: "fa fa-hand-o-right",
-        level3Icon: "fa fa-hand-o-right"
+    "showLevel": true,
+    "associatedWithSummary": true,
+    "printLog": false,
+    "multipleH1": true,
+    "mode": "float",
+    "showGoTop":true,
+    "float": {
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
     },
-    pageTop: {
-        showLevelIcon: false,
-        level1Icon: "fa fa-hand-o-right",
-        level2Icon: "fa fa-hand-o-right",
-        level3Icon: "fa fa-hand-o-right"
+    "pageTop": {
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
     }
 }
 ```
@@ -141,6 +142,9 @@ pageTop: {
            level3Icon: "fa fa-hand-o-right"
        }
 ```
+## showGoTop  : TYPE:boolean （V1.0.11+）
+
+The return top button is separated, and the return top button is displayed for true
 
 # additional support function
 - Adding `<extoc></extoc>` tags to a page generates the TOC directory here.

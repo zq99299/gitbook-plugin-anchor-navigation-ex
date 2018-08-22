@@ -2,22 +2,23 @@
 本插件支持以下参数的配置：这里展示的配置都是默认配置
 ```json
 {
-    showLevel: true,
-    associatedWithSummary: true,
-    printLog: false,
-    multipleH1: true,
-    mode: "float",
-    float: {
-        showLevelIcon: false,
-        level1Icon: "fa fa-hand-o-right",
-        level2Icon: "fa fa-hand-o-right",
-        level3Icon: "fa fa-hand-o-right"
+    "showLevel": true,
+    "associatedWithSummary": true,
+    "printLog": false,
+    "multipleH1": true,
+    "mode": "float",
+    "showGoTop":true,
+    "float": {
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
     },
-    pageTop: {
-        showLevelIcon: false,
-        level1Icon: "fa fa-hand-o-right",
-        level2Icon: "fa fa-hand-o-right",
-        level3Icon: "fa fa-hand-o-right"
+    "pageTop": {
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
     }
 }
 ```
@@ -130,7 +131,7 @@ mode = float的时候以下配置生效
 ```
 图标使用官网默认主题引入的css `http://fontawesome.dashgame.com/`
 
-## pageTop
+## pageTop 
 mode = pageTop的时候以下配置生效
 ```
 pageTop: {
@@ -140,6 +141,9 @@ pageTop: {
            level3Icon: "fa fa-hand-o-right"
        }
 ```
+## showGoTop  : TYPE:boolean （V1.0.11+）
+
+把返回顶部按钮独立出来了，为true的时候显示返回顶部按钮
 
 # 额外功能支持
 

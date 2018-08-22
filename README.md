@@ -25,6 +25,7 @@
 - [x] 在页面中增加`<!-- ex_nonav -->`标签，不会在该页面生成悬浮导航
 - [x] config.printLog=true,打印当前的处理进度，排错很有用
 - [x] config.multipleH1=false,去掉丑陋的多余的1. 序号（如过您的书籍遵循一个MD文件只有一个H1标签的话）
+- [x] config.showGoTop=true,显示返回顶部按钮 V1.0.11+
 
 # 插件效果
 * 风格：极简

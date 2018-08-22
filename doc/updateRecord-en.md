@@ -1,4 +1,7 @@
 # Update record
+## v 1.0.11 - 2018-08-22
+- [#33](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/33) The return top button is separated, and the return top button is displayed for true
+
 ## v1.0.9 - 2017-08-03
 - fix bug: [#26](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/pull/26) When configuring mode:, the title of the page is not rewritten
 
