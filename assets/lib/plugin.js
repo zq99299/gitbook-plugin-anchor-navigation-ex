@@ -88,7 +88,7 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
     var level = ''; //层级
 
     if (config.showLevel) {
-        //层级显示仅在需要的时候处理 
+        //层级显示仅在需要的时候处理
         count.h1 += 1;
         count.h2 = 0;
         count.h3 = 0;
@@ -232,15 +232,21 @@ function handlerFloatNavbar($, tocs, page) {
             html += "</ul>"
         }
     }
-
-    html += "</ul></div><a href='#" + tocs[0].url + "' id='anchorNavigationExGoTop'><i class='fa fa-arrow-up'></i></a>";
+    var goTopHtml = '';
+    if(config.showGoTop){
+        goTopHtml = '<a href=\'#" + tocs[0].url + "\' id=\'anchorNavigationExGoTop\'><i class=\'fa fa-arrow-up\'></i></a>';
+    }
+    html += "</ul></div>" + goTopHtml;
 
     page.content = html + $.html();
 }
 
 function handlerPageTopNavbar($, tocs, page) {
+    var config = Config.config;
     var html = buildTopNavbar($, tocs, page);
-    html += "<a href='#" + tocs[0].url + "' id='anchorNavigationExGoTop'><i class='fa fa-arrow-up'></i></a>";
+    if(config.showGoTop){
+        html += "<a href='#" + tocs[0].url + "' id='anchorNavigationExGoTop'><i class='fa fa-arrow-up'></i></a>";
+    }
     page.content = html + $.html();
 }
 
