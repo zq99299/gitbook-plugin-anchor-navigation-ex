@@ -9,6 +9,7 @@ const defaultConfig = {
     multipleH1: true, // 多H1模式么？一般正常的文章一个md文件只有一个H1标题，这个时候就适合关闭该选项，生成的标题不会多一个 1. 出来
     // 模式：分为三种：float：浮动导航、pageTop：页面内部顶部导航、null:不显示导航
     mode: "float",
+    showGoTop: true, //是否显示返回顶部摁扭
     float: { //浮动导航设置
         showLevelIcon: false,  //是否显示层级图标
         level1Icon: "fa fa-hand-o-right",
