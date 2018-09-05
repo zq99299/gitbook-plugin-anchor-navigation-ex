@@ -8,7 +8,9 @@
 
 ===============	【UpdateRecord：[中文](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/updateRecord.md)，[English](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/updateRecord-en.md)】================
 
+-----
 
+:exclamation: 该项目停更，转向使用 vuepress 构建笔记了
 
 -----
 
