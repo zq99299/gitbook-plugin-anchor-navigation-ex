@@ -212,7 +212,7 @@ function handlerFloatNavbar($, tocs) {
         level3Icon = float.level3Icon;
     }
 
-    var html = "<div id='anchor-navigation-ex-navbar'><i class='fa fa-anchor'></i><ul>";
+    var html = "<div id='anchor-navigation-ex-navbar'><i class='fa fa-bars'></i><ul>";
     for (var i = 0; i < tocs.length; i++) {
         var h1Toc = tocs[i];
         html += "<li><span class='title-icon " + level1Icon + "'></span><a href='#" + h1Toc.url + "'><b>" + h1Toc.level + "</b>" + h1Toc.name + "</a></li>";
