@@ -203,6 +203,7 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
 function handlerFloatNavbar($, tocs) {
     var config = Config.config;
     var float = config.float;
+    var floatIcon = float.floatIcon;
     var level1Icon = '';
     var level2Icon = '';
     var level3Icon = '';
@@ -212,7 +213,7 @@ function handlerFloatNavbar($, tocs) {
         level3Icon = float.level3Icon;
     }
 
-    var html = "<div id='anchor-navigation-ex-navbar'><i class='fa fa-bars'></i><ul>";
+    var html = "<div id='anchor-navigation-ex-navbar'><i class='" + floatIcon + "'></i><ul>";
     for (var i = 0; i < tocs.length; i++) {
         var h1Toc = tocs[i];
         html += "<li><span class='title-icon " + level1Icon + "'></span><a href='#" + h1Toc.url + "'><b>" + h1Toc.level + "</b>" + h1Toc.name + "</a></li>";
