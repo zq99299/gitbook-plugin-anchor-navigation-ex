@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
   "scripts": {
@@ -65,6 +65,7 @@
       "float": {
         "type": "object",
         "default": {
+          "floatIcon": "fa fa-anchor",
           "showLevelIcon": false,
           "level1Icon": "",
           "level2Icon": "",
