@@ -128,6 +128,10 @@ function handlerH2Toc(config, count, header, tocs, pageLevel, modifyHeader) {
 
     if (tocs.length <= 0) {
         //一级节点为空时，生成一个空的一级节点，让二级节点附带在这个上面
+        // 在显示层级的时候不乱
+        if (config.showLevel) {
+            count.h1 += 1;
+        }
         tocs.push({
             name: "",
             level: "",
@@ -175,6 +179,9 @@ function handlerH3Toc(config, count, header, tocs, pageLevel, modifyHeader) {
 
     if (tocs.length <= 0) {
         //一级节点为空时，生成一个空的一级节点，让二级节点附带在这个上面
+        if (config.showLevel) {
+            count.h1 += 1;
+        }
         tocs.push({
             name: "",
             level: "",
@@ -187,6 +194,9 @@ function handlerH3Toc(config, count, header, tocs, pageLevel, modifyHeader) {
     var h2Tocs = h1Toc.children;
     if (h2Tocs.length <= 0) {
         //二级节点为空时，生成一个空的二级节点，让三级节点附带在这个上面
+        if (config.showLevel) {
+            count.h2 += 1;
+        }
         h2Tocs.push({
             name: "",
             level: "",
