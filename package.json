@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
   "main": "index.js",
   "scripts": {
